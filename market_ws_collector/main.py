@@ -70,7 +70,7 @@ async def main():
             manager.run_all(),
             consume_snapshots(snapshot_queue, write_queue),
             writer_worker(write_queue, csv_manager, flush_interval=5),
-            periodic_plot_task(60),  # ⏱ 自动获取 symbol，每 60 秒绘图
+            periodic_plot_task(60*5),  # ⏱ 自动获取 symbol，每 60 秒绘图
         )
     finally:
         csv_manager.close_all()

@@ -17,7 +17,7 @@ def get_color_for_exchange(exchange: str):
         _exchange_color_map[exchange] = next(_color_palette)
     return _exchange_color_map[exchange]
 
-def plot_arbitrage_snapshot(symbol: str, symbol_data: dict, output_dir: str = "image", window_minutes: int = 1):
+def plot_arbitrage_snapshot(symbol: str, symbol_data: dict, output_dir: str = "image", window_minutes: int = 5):
     if not symbol_data:
         print(f"⚠️ 无数据可绘制: {symbol}")
         return
