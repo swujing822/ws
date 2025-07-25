@@ -34,6 +34,7 @@ def on_open(ws):
 
 def on_message(ws, message):
     try:
+        print(message)
         decompressed = gzip.decompress(message).decode("utf-8")
         data = json.loads(decompressed)
 

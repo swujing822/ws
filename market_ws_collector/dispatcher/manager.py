@@ -47,7 +47,7 @@ class ExchangeManager:
             # mexc.Connector(exchange="mexc", queue=queue),  # ✅ 添加 MEXC slow update/1 second
             # bitfinex.Connector(exchange="bitfinex", queue=queue),  #  invalid exchange
 
-
+            gateio.Connector(exchange="gateio", symbols=['ALGO-USDT'], queue=queue), 
 
 
 
@@ -58,7 +58,7 @@ class ExchangeManager:
             # 你可以继续添加 binance、bybit 等其他交易所
         ]
 
-        self.load_connectors() # 加载所有交易所连接器
+        # self.load_connectors() # 加载所有交易所连接器
 
     def load_connectors(self):
     
