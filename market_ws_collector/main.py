@@ -57,7 +57,7 @@ async def periodic_plot_task(interval_sec: int):
         for symbol in current_symbols:
             symbol_data = symbol_exchange_data.get(symbol)
             if symbol_data:
-                plot_arbitrage_snapshot(symbol, symbol_data, f'{output_dir}/image')
+                plot_arbitrage_snapshot(symbol, symbol_data, f'{output_dir}/image', 5)
 
 async def main():
     snapshot_queue = asyncio.Queue()
