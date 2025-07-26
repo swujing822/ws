@@ -29,5 +29,5 @@ while true; do
   # fi
 
   # 等待 30 秒
-  sleep 3
+  sleep 30
 done
