@@ -4,6 +4,15 @@
     "ms-python.python",         // Python 支持
     "ms-toolsai.jupyter",       // Jupyter 支持
     "ms-toolsai.vscode-jupyter",// Jupyter Notebook 支持
+
+      // 自动根据文件内容检测并启用 Rainbow CSV
+  "rainbow-csv.enable_auto_syntax_detection": true,
+
+  // 设置默认分隔符：例如逗号
+  "rainbow-csv.default_separator": ",",
+
+  // 如果你用的是 TSV，可以改为 "\t"
+  // "rainbow-csv.default_separator": "\\t"
   ],
 
 }
