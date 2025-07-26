@@ -79,7 +79,7 @@ async def watch_orderbook(exchange_id, symbol):
             symbol_clean = symbol.replace("/", "_").replace(":", "_")
             csv_file = f'{csv_dir}/orderbook_{exchange_id}_{symbol_clean}.csv'
 
-            print(f"[{exchange_id}] {symbol} {ob['asks'][0] if ob['asks'] else 'No ask'}")
+            # print(f"[{exchange_id}] {symbol} {ob['asks'][0] if ob['asks'] else 'No ask'}")
 
             save_orderbook_top2_to_csv(ob, csv_file)
     except asyncio.CancelledError:
@@ -97,12 +97,75 @@ async def main():
     ]
 
     symbols = [
-      "1INCH/USDT:USDT", "A/USDT:USDT", "AAVE/USDT:USDT", "ACE/USDT:USDT",
-        "ACH/USDT:USDT", "ACT/USDT:USDT", "ADA/USDT:USDT", "AERGO/USDT:USDT",
-        "AERO/USDT:USDT", "AEVO/USDT:USDT", "AGLD/USDT:USDT", "AGT/USDT:USDT",
-        "AI16Z/USDT:USDT", "AIN/USDT:USDT", "AIXBT/USDT:USDT", "ALCH/USDT:USDT",
-        "ALGO/USDT:USDT", "ANIME/USDT:USDT"
+    #   "1INCH/USDT:USDT", "A/USDT:USDT", "AAVE/USDT:USDT", "ACE/USDT:USDT",
+    #     "ACH/USDT:USDT", "ACT/USDT:USDT", "ADA/USDT:USDT", "AERGO/USDT:USDT",
+    #     "AERO/USDT:USDT", "AEVO/USDT:USDT", "AGLD/USDT:USDT", "AGT/USDT:USDT",
+    #     "AI16Z/USDT:USDT", "AIN/USDT:USDT", "AIXBT/USDT:USDT", "ALCH/USDT:USDT",
+    #     "ALGO/USDT:USDT", "ANIME/USDT:USDT"
         # "ACH/USDT:USDT"
+        # "1INCH/USDT:USDT", 
+
+        "1INCH/USDT:USDT",
+    "A/USDT:USDT",
+    "AAVE/USDT:USDT",
+    "ACE/USDT:USDT",
+    "ACH/USDT:USDT",
+    "ACT/USDT:USDT",
+    "ADA/USDT:USDT",
+    "AERGO/USDT:USDT",
+    "AERO/USDT:USDT",
+    "AEVO/USDT:USDT",
+    "AGLD/USDT:USDT",
+    "AGT/USDT:USDT",
+    "AI/USDT:USDT",
+    "AI16Z/USDT:USDT",
+    "AIN/USDT:USDT",
+    "AIXBT/USDT:USDT",
+    "ALCH/USDT:USDT",
+    "ALGO/USDT:USDT",
+    "ALT/USDT:USDT",
+    "ANIME/USDT:USDT",
+    "APE/USDT:USDT",
+    "API3/USDT:USDT",
+    "APT/USDT:USDT",
+    "AR/USDT:USDT",
+    "ARB/USDT:USDT",
+    "ARC/USDT:USDT",
+    "ARK/USDT:USDT",
+    "ARKM/USDT:USDT",
+    "ATH/USDT:USDT",
+    "ATOM/USDT:USDT",
+    "AUCTION/USDT:USDT",
+    "AVA/USDT:USDT",
+    "AVAAI/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "AXS/USDT:USDT",
+    "B/USDT:USDT",
+    "B2/USDT:USDT",
+    "B3/USDT:USDT",
+    "BABY/USDT:USDT",
+    "BAKE/USDT:USDT",
+    "BAN/USDT:USDT",
+    "BANANA/USDT:USDT",
+    "BANANAS31/USDT:USDT",
+    "BAND/USDT:USDT",
+    "BANK/USDT:USDT",
+    "BAT/USDT:USDT",
+    "BB/USDT:USDT",
+    "BCH/USDT:USDT",
+    "BDXN/USDT:USDT",
+    "BERA/USDT:USDT",
+    "BID/USDT:USDT",
+    "BIGTIME/USDT:USDT",
+    "BIO/USDT:USDT",
+    "BLUR/USDT:USDT",
+    "BMT/USDT:USDT",
+    "BNB/USDT:USDT",
+    "BNT/USDT:USDT",
+    "BOME/USDT:USDT",
+    "BRETT/USDT:USDT",
+    "BSV/USDT:USDT",
+    "BSW/USDT:USDT",
     ]
 
     
@@ -114,7 +177,11 @@ async def main():
     tasks = []
     for exchange_id in exchange_ids:
         for symbol in symbols:
-            tasks.append(asyncio.create_task(watch_orderbook(exchange_id, symbol)))
+            # tasks.append(asyncio.create_task(watch_orderbook(exchange_id, symbol)))
+            print("start ", symbol)
+            task = asyncio.create_task(watch_orderbook(exchange_id, symbol))
+            tasks.append(task)
+            await asyncio.sleep(1)  # 👈 延迟启动，避免被限速封 IP 等问题
 
     try:
         await asyncio.gather(*tasks)

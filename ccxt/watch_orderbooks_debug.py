@@ -116,7 +116,8 @@ async def main():
         # "AI16Z/USDT:USDT", "AIN/USDT:USDT", "AIXBT/USDT:USDT", "ALCH/USDT:USDT",
         # "ALGO/USDT:USDT", "ANIME/USDT:USDT"
         # "ACH/USDT:USDT"
-        "ALGO/USDT:USDT"
+        # "ALGO/USDT:USDT"
+        "1INCH/USDT:USDT",
     ]
 
     # exchange_ids = [
