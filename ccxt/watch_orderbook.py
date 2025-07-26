@@ -70,8 +70,8 @@ async def watch_orderbooks(exchange_id, symbols):
         if hasattr(exchange, 'watchOrderBookForSymbols'):
             while True:
                 ob = await exchange.watchOrderBookForSymbols(symbols)
-                symbol = ob['symbol']
-                csv_file = f'{csv_dir}/orderbook_{exchange_id}_{symbol.replace("/", "_")}.csv'
+                symbol = ob['symbol'].replace("/", "_").replace(":", "_")
+                csv_file = f'{csv_dir}/orderbook_{exchange_id}_{symbol}.csv'
 
                 # print(ob['asks'][0], ob['symbol'])
                 save_orderbook_top2_to_csv(ob, csv_file)
