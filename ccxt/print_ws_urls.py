@@ -10,7 +10,7 @@ async def fetch_ws_urls(exchange_id):
     try:
         cls = getattr(ccxtpro, exchange_id)
         exchange = cls()
-        ws_urls = exchange.urls['api'].get('ws', {})
+        ws_urls = exchange.urls['api']#.get('ws', {})
 
         print(f"\n📡 {exchange_id.upper():<20} WebSocket URLs:")
         if isinstance(ws_urls, dict):
