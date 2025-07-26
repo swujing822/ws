@@ -114,13 +114,17 @@ async def main():
         # "ACH/USDT:USDT", "ACT/USDT:USDT", "ADA/USDT:USDT", "AERGO/USDT:USDT",
         # "AERO/USDT:USDT", "AEVO/USDT:USDT", "AGLD/USDT:USDT", "AGT/USDT:USDT",
         # "AI16Z/USDT:USDT", "AIN/USDT:USDT", "AIXBT/USDT:USDT", "ALCH/USDT:USDT",
-        "ALGO/USDT:USDT", "ANIME/USDT:USDT"
+        # "ALGO/USDT:USDT", "ANIME/USDT:USDT"
+        "ACH/USDT:USDT"
     ]
 
+    # exchange_ids = [
+    #     'binanceusdm', 'blofin', 'kucoinfutures', 'bingx', 'mexc',
+    #     'binance', 'phemex', 'bybit', 'bitrue', 'bitmart',
+    #     'xt', 'bitget', 'gateio', 'gate'
+    # ]
     exchange_ids = [
-        'binanceusdm', 'blofin', 'kucoinfutures', 'bingx', 'mexc',
-        'binance', 'phemex', 'bybit', 'bitrue', 'bitmart',
-        'xt', 'bitget', 'gateio', 'gate'
+        'gateio'#, 'gate'
     ]
 
     tasks = [
