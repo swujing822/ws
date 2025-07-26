@@ -66,6 +66,8 @@ async def watch_tickers(exchange_id, symbols):
     try:
         if hasattr(exchange, 'watchTickers'):
             while True:
+                # tickers = await exchange.watch_tickers(symbols)
+                # print(exchange.iso8601(exchange.milliseconds()), tickers)
                 tickers = await exchange.watch_tickers(symbols)
                 for symbol, ticker in tickers.items():
                     # print(
