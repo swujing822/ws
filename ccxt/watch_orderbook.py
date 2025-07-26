@@ -107,8 +107,8 @@ async def main():
     ]
 
     exchange_ids = [
-        'binanceusdm', 'blofin', 'kucoinfutures', 'bingx', 'mexc',
-        'binance', 'phemex', 'bybit', 'bitrue', 'bitmart',
+        # 'binanceusdm', 'blofin', 'kucoinfutures', 'bingx', 'mexc',
+        # 'binance', 'phemex', 'bybit', 'bitrue', 'bitmart',
         'xt', 'bitget', 'gateio', 'gate'
     ]
 
