@@ -60,13 +60,19 @@ def save_orderbook_top2_to_csv(ob, csv_file):
 
 async def watch_one_symbol(exchange, exchange_id, symbol):
     while True:
-        ob = await exchange.watch_order_book(symbol)
-        symbol_clean = symbol.replace("/", "_").replace(":", "_")
-        csv_file = f'{csv_dir}/orderbook_inner_{exchange_id}_{symbol_clean}.csv'
+        try:
+            ob = await exchange.watch_order_book(symbol)
+            symbol_clean = symbol.replace("/", "_").replace(":", "_")
+            csv_file = f'{csv_dir}/inner_orderbook_{exchange_id}_{symbol_clean}.csv'
+            timestamp_ms = ob['timestamp']
+            print(f"{ob['nonce']} {ob['timestamp']} {format_time_from_timestamp(timestamp_ms)} [{exchange_id}] {symbol} {ob['asks'][0]}")
+            # print(ob['symbol'])
 
-        # print(f"[{exchange_id}] {symbol} {ob['asks'][0] if ob['asks'] else 'No ask'}")
-
-        save_orderbook_top2_to_csv(ob, csv_file)
+            save_orderbook_top2_to_csv(ob, csv_file)
+        except Exception as e:
+            print(f"🔴 Failed to subscribe {symbol} on {exchange_id}: {e}")
+            await asyncio.sleep(1)
+            continue
 
 # 单个交易所聚合 ticker 订阅协程
 async def watch_orderbooks(exchange_id, symbols):
@@ -76,7 +82,6 @@ async def watch_orderbooks(exchange_id, symbols):
 
     try:
         if exchange.has['watchOrderBookForSymbols']:
-
             while True:
                 ob = await exchange.watchOrderBookForSymbols(symbols)
                 symbol = ob['symbol'].replace("/", "_").replace(":", "_")
@@ -118,15 +123,22 @@ async def main():
         ex_syms = json.load(f)
 
     # print(ex_syms)
-    
+    #     "AAVE/USDT:USDT",
+    # "ACT/USDT:USDT",
+    # "ADA/USDT:USDT",
 
     tasks = [
     ]
 
     skips = ["digifinex", "bitmart"]
 
+    selected = ["ascendex"]
+
     for exchange_id in ex_syms:
         if exchange_id in skips:
+            print("skip ", exchange_id)
+            continue
+        if exchange_id not in selected:
             print("skip ", exchange_id)
             continue
         print(f"start {exchange_id}")
