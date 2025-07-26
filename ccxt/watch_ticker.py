@@ -57,7 +57,7 @@ def save_ticker_to_csv(exchange_id, symbol, ticker):
         writer.writerow(row)
 
 # 单个交易所聚合 ticker 订阅协程
-async def watch_tickers(exchange_id, symbols):
+async def watch_ticker(exchange_id, symbol):
     exchange_class = getattr(ccxtpro, exchange_id)
     exchange = exchange_class({'enableRateLimit': False})
 
@@ -66,15 +66,13 @@ async def watch_tickers(exchange_id, symbols):
     try:
         if hasattr(exchange, 'watchTicker'):
             while True:
-                tickers = await exchange.watchTickers(symbols)
-                for symbol, ticker in tickers.items():
-                    print(
-                        f"[{exchange_id}]",
-                        exchange.iso8601(exchange.milliseconds()),
-                        symbol,
-                        f"bid: {ticker.get('bid')}",
-                        f"ask: {ticker.get('ask')}"
-                    )
+                ticker = await exchange.watchTicker(symbol)
+                print(
+                    f"[{exchange_id}]",
+                    exchange.iso8601(exchange.milliseconds()),
+                    f"bid: {ticker.get('bid')}",
+                    f"ask: {ticker.get('ask')}"
+                )
                     # save_ticker_to_csv(exchange_id, symbol, ticker)
         else:
             print(f"🟡 {exchange_id} does not support watchTickers, skipping")
@@ -95,8 +93,8 @@ async def main():
         "ACH/USDT:USDT",
     ]
 
-    symbol = 
-
+    symbol = "ACH/USDT:USDT"
+    exchange_id = "gateio"
     # exchange_ids = ['okx', 'binance', 'bybit', 'bitget', 'gateio']
     exchange_ids = [
         'binanceusdm', 'blofin', 'kucoinfutures', 'bingx', 'mexc',
