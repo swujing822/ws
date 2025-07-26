@@ -38,8 +38,8 @@ async def check_exchange(exchange_id):
 
         print(f'{exchange_id:<22} | OrderBookForSymbols: {"✅" if has_orderbooks else "❌"} | '
               f'watchTickers: {"✅" if has_tickers else "❌"} | '
-              f'watchTickers: {"✅" if has_tickers else "❌"} | '
-              f'watchTickers: {"✅" if has_tickers else "❌"} | '
+              f'has_orderbook: {"✅" if has_orderbook else "❌"} | '
+              f'has_ticker: {"✅" if has_ticker else "❌"} | '
 
               )
 
@@ -55,7 +55,9 @@ async def main():
     await asyncio.gather(*[check_exchange(id) for id in ccxtpro.exchanges])
     print("\n--- ✅ 支持统计结果 ---")
     print(f'总交易所数量: {total_exchanges}')
-    print(f'支持 watchOrderBookForSymbols 的交易所: {count_orderbook}')
+    print(f'支持 watchOrderBookForSymbols 的交易所: {count_orderbooks}')
     print(f'支持 watchTickers 的交易所: {count_tickers}')
+    print(f'支持 watchOrderBookForSymbol 的交易所: {count_orderbook}')
+    print(f'支持 watchTicker 的交易所: {count_ticker}')
 
 asyncio.run(main())
