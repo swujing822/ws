@@ -1,0 +1,2 @@
+timestamp,time,exchange,symbol,bid,bidVolume,ask,askVolume,lastPrice,baseVolume,quoteVolume
+1753504864615,04:41:04.615,phemex,ALGO/USDT:USDT,,,,,0.2697,10407719.5,2722688.4511
