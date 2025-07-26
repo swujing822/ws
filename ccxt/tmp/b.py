@@ -25,13 +25,16 @@ async def check_exchange(exchange_id):
 
         total_exchanges += 1
 
-        print(f'{exchange_id:<12} | OrderBookForSymbols: {"✅" if has_orderbook else "❌"} | '
+        print(f'{exchange_id:<22} | OrderBookForSymbols: {"✅" if has_orderbook else "❌"} | '
               f'watchTickers: {"✅" if has_tickers else "❌"}')
 
         await exchange.close()
 
     except Exception as e:
-        print(f'{exchange_id:<12} | ❌ ERROR: {str(e)}')
+        print(f'{exchange_id:<22} | ❌ ERROR: {str(e)}')
+    finally:
+        await exchange.close()
+        # print(f"✅ Closed {exchange_id}")
 
 async def main():
     await asyncio.gather(*[check_exchange(id) for id in ccxtpro.exchanges])
