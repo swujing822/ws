@@ -26,6 +26,9 @@
   // 美化光标行为
   "editor.cursorBlinking": "smooth",
 
+  "python.defaultInterpreterPath": ".venv/bin/python"
+
+
   // "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python",
   // "python.analysis.extraPaths": [
   //   "/usr/local/python/3.12.1/lib/python3.12/site-packages"

@@ -1,7 +1,7 @@
 #!/bin/bash
-TAG="v1.2.6"
+TAG="v1.3"
 TITLE=$TAG"-alpha"
-NOTES="update"
+NOTES="ccxt"
 gh release create "$TAG" --title "$TITLE" --notes "$NOTES"
 REPO_URL=$(gh repo view --json nameWithOwner -q '.nameWithOwner')
 echo "Source ZIP:"
