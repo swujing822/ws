@@ -68,16 +68,26 @@ async def watch_orderbooks(exchange_id, symbols):
     await exchange.load_markets()  # 必须加载市场
 
     try:
-        if hasattr(exchange, 'watchOrderBookForSymbols'):
+        if exchange.has['watchOrderBookForSymbols']:
             while True:
-                ob = await exchange.watchOrderBookForSymbols(symbols)
-                symbol = ob['symbol'].replace("/", "_").replace(":", "_")
-                csv_file = f'{csv_dir}/orderbook_{exchange_id}_{symbol}.csv'
+                try:
+                    orderbook = await exchange.watchOrderBookForSymbols(symbols)
+                    symbol = orderbook['symbol']
+                    print(exchange.iso8601(exchange.milliseconds()), symbol, orderbook['asks'][0], orderbook['bids'][0])
+                except Exception as e:
+                    print(e)
+                    # stop the loop on exception or leave it commented to retry
+                    # raise e
+        # if hasattr(exchange, 'watchOrderBookForSymbols'):
+        #     while True:
+        #         ob = await exchange.watchOrderBookForSymbols(symbols)
+        #         symbol = ob['symbol'].replace("/", "_").replace(":", "_")
+        #         csv_file = f'{csv_dir}/orderbook_{exchange_id}_{symbol}.csv'
 
-                # print(ob['asks'][0], ob['symbol'])
-                save_orderbook_top2_to_csv(ob, csv_file)
-                # for symbol, ticker in tickers.items():
-                #     save_ticker_to_csv(exchange_id, symbol, ticker)
+        #         # print(ob['asks'][0], ob['symbol'])
+        #         save_orderbook_top2_to_csv(ob, csv_file)
+        #         # for symbol, ticker in tickers.items():
+        #         #     save_ticker_to_csv(exchange_id, symbol, ticker)
         else:
             print(f"🟡 {exchange_id} does not support watchTickers, skipping")
     except asyncio.CancelledError:
