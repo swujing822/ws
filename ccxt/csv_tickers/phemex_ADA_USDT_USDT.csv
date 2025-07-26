@@ -1,0 +1,2 @@
+timestamp,time,exchange,symbol,bid,bidVolume,ask,askVolume,lastPrice,baseVolume,quoteVolume
+1753504810518,04:40:10.518,phemex,ADA/USDT:USDT,,,,,0.827,15922533.16,12773212.400865

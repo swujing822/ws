@@ -1,0 +1,2 @@
+timestamp,time,exchange,symbol,bid,bidVolume,ask,askVolume,lastPrice,baseVolume,quoteVolume
+1753504810285,04:40:10.285,gateio,ACH/USDT:USDT,,,,,0.02237,18133038.0,405636.0

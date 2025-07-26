@@ -1,0 +1,4 @@
+timestamp,time,exchange,symbol,bid,bidVolume,ask,askVolume,lastPrice,baseVolume,quoteVolume
+1753504832214,04:40:32.214,kucoinfutures,ADA/USDT:USDT,0.8269,843.0,0.82703,111.0,0.827,,
+1753504832472,04:40:32.472,kucoinfutures,ADA/USDT:USDT,0.82692,188.0,0.82693,4.0,0.82693,,
+1753504832497,04:40:32.497,kucoinfutures,ADA/USDT:USDT,0.82701,73.0,0.82703,92.0,0.82701,,
