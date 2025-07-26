@@ -28,7 +28,7 @@ while true; do
     echo "[`date '+%F %T'`] ⬇️ 检测到更新，执行 git pull" #  >> "$LOG_FILE"
     git pull >> "$LOG_FILE" 2>&1
   else
-    echo "[`date '+%F %T'`] ✅ 无更新"# #  >> "$LOG_FILE"
+    echo "[`date '+%F %T'`] ✅ 无更新"  #  >> "$LOG_FILE"
   fi
 
   # 等待 30 秒
