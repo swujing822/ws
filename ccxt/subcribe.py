@@ -64,7 +64,8 @@ def save_orderbook_top2_to_csv(ob, csv_file):
 # 单个交易所聚合 ticker 订阅协程
 async def watch_orderbooks(exchange_id, symbols):
     exchange_class = getattr(ccxtpro, exchange_id)
-    exchange = exchange_class({'enableRateLimit': True})
+    exchange = exchange_class({'enableRateLimit': False})
+    await exchange.load_markets()  # 必须加载市场
 
     try:
         if hasattr(exchange, 'watchOrderBookForSymbols'):
