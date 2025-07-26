@@ -99,7 +99,7 @@ async def main():
 
     # exchange_ids = ['okx', 'binance', 'bybit', 'bitget', 'gateio']
 
-    contract_symbols = [
+    symbols = [
         # "1INCH/USDT:USDT", "A/USDT:USDT", "AAVE/USDT:USDT", "ACE/USDT:USDT",
         # "ACH/USDT:USDT", "ACT/USDT:USDT", "ADA/USDT:USDT", "AERGO/USDT:USDT",
         # "AERO/USDT:USDT", "AEVO/USDT:USDT", "AGLD/USDT:USDT", "AGT/USDT:USDT",
