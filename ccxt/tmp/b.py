@@ -12,8 +12,11 @@ async def check_exchange(exchange_id):
         exchange = cls({'enableRateLimit': True})
         await exchange.load_markets()
 
-        has_orderbook = hasattr(exchange, 'watchOrderBookForSymbols')
-        has_tickers = hasattr(exchange, 'watchTickers')
+        # has_orderbook = hasattr(exchange, 'watchOrderBookForSymbols')
+        # has_tickers = hasattr(exchange, 'watchTickers')
+
+        has_orderbook = True if exchange.has['watchOrderBookForSymbols'] else False
+        has_tickers = True if exchange.has['watchOrderBookForSymbols'] else False
 
         if has_orderbook:
             count_orderbook += 1
