@@ -6,14 +6,13 @@ import time
 from datetime import datetime, timezone
 import shutil
 
-csv_dir = "csv_orderbooks"
+csv_dir = "csv_orderbooks_two"
 
 if os.path.exists(csv_dir) and os.path.isdir(csv_dir):
     shutil.rmtree(csv_dir)
     print(f"Deleted directory: {csv_dir}")
 else:
     print(f"Directory does not exist: {csv_dir}")
-
 
 os.makedirs(csv_dir, exist_ok=True)
 
@@ -59,7 +58,15 @@ def save_orderbook_top2_to_csv(ob, csv_file):
             ])
         writer.writerow(row)
 
+async def watch_one_symbol(exchange, exchange_id, symbol):
+    while True:
+        ob = await exchange.watch_order_book(symbol)
+        symbol_clean = symbol.replace("/", "_").replace(":", "_")
+        csv_file = f'{csv_dir}/orderbook_inner_{exchange_id}_{symbol_clean}.csv'
 
+        # print(f"[{exchange_id}] {symbol} {ob['asks'][0] if ob['asks'] else 'No ask'}")
+
+        save_orderbook_top2_to_csv(ob, csv_file)
 
 # 单个交易所聚合 ticker 订阅协程
 async def watch_orderbooks(exchange_id, symbols):
@@ -69,28 +76,33 @@ async def watch_orderbooks(exchange_id, symbols):
 
     try:
         if exchange.has['watchOrderBookForSymbols']:
-            print('ok')
-            # while True:
-            #     try:
-            #         orderbook = await exchange.watchOrderBookForSymbols(symbols)
-            #         symbol = orderbook['symbol']
-            #         print(exchange.iso8601(exchange.milliseconds()), symbol, orderbook['asks'][0], orderbook['bids'][0])
-            #     except Exception as e:
-            #         print(e)
-                    # stop the loop on exception or leave it commented to retry
-                    # raise e
-        # if hasattr(exchange, 'watchOrderBookForSymbols'):
-        #     while True:
-        #         ob = await exchange.watchOrderBookForSymbols(symbols)
-        #         symbol = ob['symbol'].replace("/", "_").replace(":", "_")
-        #         csv_file = f'{csv_dir}/orderbook_{exchange_id}_{symbol}.csv'
 
-        #         # print(ob['asks'][0], ob['symbol'])
-        #         save_orderbook_top2_to_csv(ob, csv_file)
-        #         # for symbol, ticker in tickers.items():
-        #         #     save_ticker_to_csv(exchange_id, symbol, ticker)
+            while True:
+                ob = await exchange.watchOrderBookForSymbols(symbols)
+                symbol = ob['symbol'].replace("/", "_").replace(":", "_")
+                csv_file = f'{csv_dir}/orderbook_{exchange_id}_{symbol}.csv'
+
+                # print(ob['asks'][0], ob['symbol'])
+                save_orderbook_top2_to_csv(ob, csv_file)
+                # for symbol, ticker in tickers.items():
+                #     save_ticker_to_csv(exchange_id, symbol, ticker)
         else:
             print(f"🟡 {exchange_id} does not support watchTickers, skipping")
+            inner_tasks = []
+
+            for symbol in symbols:
+                # tasks.append(asyncio.create_task(watch_orderbook(exchange_id, symbol)))
+                print("inner start ", symbol)
+                task = asyncio.create_task(watch_one_symbol(exchange, exchange_id, symbol))
+                inner_tasks.append(task)
+                await asyncio.sleep(1)  # 👈 延迟启动，避免被限速封 IP 等问题
+            try:
+                await asyncio.gather(*inner_tasks)
+            except KeyboardInterrupt:
+                print("\n🔴 Ctrl+C received. Cancelling tasks...")
+                for task in inner_tasks:
+                    task.cancel()
+                await asyncio.gather(*inner_tasks, return_exceptions=True)
     except asyncio.CancelledError:
         print(f"🟡 Cancelled: {exchange_id}")
     except Exception as e:
@@ -99,40 +111,28 @@ async def watch_orderbooks(exchange_id, symbols):
         await exchange.close()
         print(f"✅ Closed {exchange_id}")
 
-# 主函数
+import json
 async def main():
-    # symbols = [
-    #     "ALGO/USDT:USDT",
-    #     "ADA/USDT:USDT",
-    #     "AAVE/USDT:USDT",
-    #     "ACH/USDT:USDT",
-    # ]
 
-    # exchange_ids = ['okx', 'binance', 'bybit', 'bitget', 'gateio']
+    with open("../selector/top100_exchange_symbols.json", "r", encoding="utf-8") as f:
+        ex_syms = json.load(f)
 
-    symbols = [
-        # "1INCH/USDT:USDT", "A/USDT:USDT", "AAVE/USDT:USDT", "ACE/USDT:USDT",
-        # "ACH/USDT:USDT", "ACT/USDT:USDT", "ADA/USDT:USDT", "AERGO/USDT:USDT",
-        # "AERO/USDT:USDT", "AEVO/USDT:USDT", "AGLD/USDT:USDT", "AGT/USDT:USDT",
-        # "AI16Z/USDT:USDT", "AIN/USDT:USDT", "AIXBT/USDT:USDT", "ALCH/USDT:USDT",
-        # "ALGO/USDT:USDT", "ANIME/USDT:USDT"
-        "ACH/USDT:USDT"
-    ]
-
-    # exchange_ids = [
-    #     'binanceusdm', 'blofin', 'kucoinfutures', 'bingx', 'mexc',
-    #     'binance', 'phemex', 'bybit', 'bitrue', 'bitmart',
-    #     'xt', 'bitget', 'gateio', 'gate'
-    # ]
-    exchange_ids = [
-        'gateio'#, 'gate'
-    ]
+    # print(ex_syms)
+    
 
     tasks = [
-        asyncio.create_task(watch_orderbooks(exchange_id, symbols))
-        for exchange_id in exchange_ids
     ]
 
+    skips = ["digifinex", "bitmart"]
+
+    for exchange_id in ex_syms:
+        if exchange_id in skips:
+            print("skip ", exchange_id)
+            continue
+        print(f"start {exchange_id}")
+        task = asyncio.create_task(watch_orderbooks(exchange_id, ex_syms[exchange_id]))
+        tasks.append(task)
+        await asyncio.sleep(1)  # 👈 延迟启动，避免被限速封 IP 等问题
     try:
         await asyncio.gather(*tasks)
     except KeyboardInterrupt:
