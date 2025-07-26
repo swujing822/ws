@@ -16,7 +16,7 @@ async def check_exchange(exchange_id):
         # has_tickers = hasattr(exchange, 'watchTickers')
 
         has_orderbook = True if exchange.has['watchOrderBookForSymbols'] else False
-        has_tickers = True if exchange.has['watchOrderBookForSymbols'] else False
+        has_tickers = True if exchange.has['watchTickers'] else False
 
         if has_orderbook:
             count_orderbook += 1
