@@ -71,9 +71,9 @@ async def watch_orderbooks(exchange_id, symbols):
             while True:
                 ob = await exchange.watchOrderBookForSymbols(symbols)
                 symbol = ob['symbol']
-                csv_file = f'orderbook_{exchange_id}_{symbol.replace("/", "_")}.csv'
+                csv_file = f'{csv_dir}/orderbook_{exchange_id}_{symbol.replace("/", "_")}.csv'
 
-                print(ob['asks'][0], ob['symbol'])
+                # print(ob['asks'][0], ob['symbol'])
                 save_orderbook_top2_to_csv(ob, csv_file)
                 # for symbol, ticker in tickers.items():
                 #     save_ticker_to_csv(exchange_id, symbol, ticker)
