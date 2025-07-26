@@ -69,7 +69,7 @@ async def watch_orderbooks(exchange_id, symbols):
 
     try:
         if exchange.has['watchOrderBookForSymbols']:
-            
+            print('ok')
             # while True:
             #     try:
             #         orderbook = await exchange.watchOrderBookForSymbols(symbols)
