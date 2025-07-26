@@ -64,15 +64,24 @@ async def watch_ticker(exchange_id, symbol):
     await exchange.load_markets()  
 
     try:
-        if exchange.has['watchTicker']:
+        if exchange.has['watchOrderBook']:
             while True:
                 try:
-                    ticker = await exchange.watch_ticker(symbol)
-                    print(exchange.iso8601(exchange.milliseconds()), ticker)
+                    orderbook = await exchange.watch_order_book(symbol)
+                    print(exchange.iso8601(exchange.milliseconds()), symbol, orderbook['asks'][0], orderbook['bids'][0])
                 except Exception as e:
                     print(e)
                     # stop the loop on exception or leave it commented to retry
                     # raise e
+        # if exchange.has['watchTicker']:
+        #     while True:
+        #         try:
+        #             ticker = await exchange.watch_ticker(symbol)
+        #             print(exchange.iso8601(exchange.milliseconds()), ticker)
+        #         except Exception as e:
+        #             print(e)
+        #             # stop the loop on exception or leave it commented to retry
+        #             # raise e
         # if hasattr(exchange, 'watchTicker'):
         #     while True:
         #         ticker = await exchange.watch_ticker(symbol)
