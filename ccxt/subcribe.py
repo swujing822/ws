@@ -65,7 +65,7 @@ async def watch_orderbooks(exchange_id, symbols):
             while True:
                 ob = await exchange.watchOrderBookForSymbols(symbols)
 
-                print(ob)
+                print(ob['asks'][0], ob['symbol'])
                 # for symbol, ticker in tickers.items():
                 #     save_ticker_to_csv(exchange_id, symbol, ticker)
         else:
