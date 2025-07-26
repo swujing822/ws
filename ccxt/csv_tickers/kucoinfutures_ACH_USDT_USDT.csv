@@ -1,2 +1,3 @@
 timestamp,time,exchange,symbol,bid,bidVolume,ask,askVolume,lastPrice,baseVolume,quoteVolume
 1753504862432,04:41:02.432,kucoinfutures,ACH/USDT:USDT,0.022357,24.0,0.022395,23.0,0.022395,,
+1753506150564,05:02:30.564,kucoinfutures,ACH/USDT:USDT,0.022314,18.0,0.022349,25.0,0.022314,,
