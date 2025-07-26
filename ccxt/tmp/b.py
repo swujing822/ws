@@ -21,7 +21,7 @@ async def check_exchange(exchange_id):
         has_orderbooks = True if exchange.has['watchOrderBookForSymbols'] else False
         has_tickers = True if exchange.has['watchTickers'] else False
 
-        has_orderbook = True if exchange.has['watchOrderBookForSymbol'] else False
+        has_orderbook = True if exchange.has['watchOrderBook'] else False
         has_ticker = True if exchange.has['watchTicker'] else False
 
         if has_orderbooks:
