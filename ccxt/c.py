@@ -2,7 +2,7 @@ import ccxt.async_support as ccxt
 import asyncio
 
 symbols = [
-    "1INCH-USDT", "A-USDT", "AAVE-USDT", "ACE-USDT", "ACH-USDT", "ACT-USDT",
+    # "1INCH-USDT", "A-USDT", "AAVE-USDT", "ACE-USDT", "ACH-USDT", "ACT-USDT",
     "ADA-USDT", "AERGO-USDT", "AERO-USDT", "AEVO-USDT", "AGLD-USDT", "AGT-USDT",
     "AI16Z-USDT", "AIN-USDT", "AIXBT-USDT", "ALCH-USDT", "ALGO-USDT", "ALT-USDT",
     "ANIME-USDT"
