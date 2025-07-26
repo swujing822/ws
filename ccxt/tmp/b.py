@@ -29,15 +29,19 @@ async def check_exchange(exchange_id):
         if has_tickers:
             count_tickers += 1
 
-        if has_orderbooks:
-            count_orderbooks += 1
-        if has_tickers:
-            count_tickers += 1
+        if has_orderbook:
+            count_orderbook += 1
+        if has_ticker:
+            count_ticker += 1
 
         total_exchanges += 1
 
         print(f'{exchange_id:<22} | OrderBookForSymbols: {"✅" if has_orderbooks else "❌"} | '
-              f'watchTickers: {"✅" if has_tickers else "❌"}')
+              f'watchTickers: {"✅" if has_tickers else "❌"} | '
+              f'watchTickers: {"✅" if has_tickers else "❌"} | '
+              f'watchTickers: {"✅" if has_tickers else "❌"} | '
+
+              )
 
         await exchange.close()
 
