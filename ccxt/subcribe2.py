@@ -17,7 +17,7 @@ def format_time_from_timestamp(ts):
 def save_ticker_to_csv(exchange_id, symbol, ticker):
     timestamp_ms = ticker.get('timestamp') or int(time.time() * 1000)
     formatted_time = format_time_from_timestamp(timestamp_ms)
-    symbol_clean = symbol.replace("/", "-").replace(":", "-")
+    symbol_clean = symbol.replace("/", "_").replace(":", "_")
     csv_file = f'csv/{symbol_clean}.csv'
     write_header = not os.path.exists(csv_file)
 
