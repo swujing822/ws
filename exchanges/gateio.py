@@ -3,7 +3,8 @@ import json
 import time
 
 WS_URL = "wss://fx-ws.gateio.ws/v4/ws/usdt"
-CONTRACTS = ["BTC_USDT", "ETH_USDT", "SOL_USDT", "XRP_USDT", "LTC_USDT"]
+# CONTRACTS = ["BTC_USDT", "ETH_USDT", "SOL_USDT", "XRP_USDT", "LTC_USDT"]
+CONTRACTS = ["ALGO_USDT", "XRP_USDT", "LTC_USDT"]
 
 def on_open(ws):
     print("✅ 已连接 Gate.io 合约 WebSocket")
@@ -12,6 +13,8 @@ def on_open(ws):
         sub_msg = {
             "time": int(time.time()),
             "channel": "futures.book_ticker",  # ✅ 买一卖一频道
+            # "channel": "futures.tickers",  # ✅ 买一卖一频道
+
             "event": "subscribe",
             "payload": [contract]
         }

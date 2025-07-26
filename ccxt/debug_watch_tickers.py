@@ -68,7 +68,16 @@ async def watch_tickers(exchange_id, symbols):
             while True:
                 # tickers = await exchange.watch_tickers(symbols)
                 # print(exchange.iso8601(exchange.milliseconds()), tickers)
-                tickers = await exchange.watch_tickers(symbols)
+                # tickers = await exchange.watch_tickers(symbols)
+                
+                url = 'wss://fx-ws.gateio.ws/v4/ws/usdt'
+                messageHashes = ['ticker:ALGO/USDT:USDT']
+                payload = ['ALGO_USDT']
+                channel = 'futures.tickers'
+                params = {}
+
+                tickers = await exchange.subscribe_public_multiple(url, messageHashes, payload, channel, params)
+
                 for symbol, ticker in tickers.items():
                     print(
                         f"[{exchange_id}]",
