@@ -1,0 +1,123 @@
+Exchange,Type,WebSocket URL
+alpaca,crypto,wss://stream.data.alpaca.markets/v1beta2/crypto
+alpaca,trading,wss://api.alpaca.markets/stream
+apex,public,wss://quote.omni.apex.exchange/realtime_public?v=2
+apex,private,wss://quote.omni.apex.exchange/realtime_private?v=2
+ascendex,public,wss://ascendex.com:443/api/pro/v2/stream
+ascendex,private,wss://ascendex.com:443/{accountGroup}/api/pro/v2/stream
+bequant,public,wss://api.bequant.io/api/3/ws/public
+bequant,private,wss://api.bequant.io/api/3/ws/trading
+binance,spot,wss://stream.binance.com:9443/ws
+binance,margin,wss://stream.binance.com:9443/ws
+binance,future,wss://fstream.binance.com/ws
+binance,delivery,wss://dstream.binance.com/ws
+binance,ws-api,"{'spot': 'wss://ws-api.binance.com:443/ws-api/v3', 'future': 'wss://ws-fapi.binance.com/ws-fapi/v1', 'delivery': 'wss://ws-dapi.binance.com/ws-dapi/v1'}"
+binance,papi,wss://fstream.binance.com/pm/ws
+binancecoinm,spot,wss://stream.binance.com:9443/ws
+binancecoinm,margin,wss://stream.binance.com:9443/ws
+binancecoinm,future,wss://fstream.binance.com/ws
+binancecoinm,delivery,wss://dstream.binance.com/ws
+binancecoinm,ws-api,"{'spot': 'wss://ws-api.binance.com:443/ws-api/v3', 'future': 'wss://ws-fapi.binance.com/ws-fapi/v1', 'delivery': 'wss://ws-dapi.binance.com/ws-dapi/v1'}"
+binancecoinm,papi,wss://fstream.binance.com/pm/ws
+binanceus,spot,wss://stream.binance.us:9443/ws
+binanceus,margin,wss://stream.binance.com:9443/ws
+binanceus,future,wss://fstream.binance.com/ws
+binanceus,delivery,wss://dstream.binance.com/ws
+binanceus,ws-api,"{'spot': 'wss://ws-api.binance.com:443/ws-api/v3', 'future': 'wss://ws-fapi.binance.com/ws-fapi/v1', 'delivery': 'wss://ws-dapi.binance.com/ws-dapi/v1'}"
+binanceus,papi,wss://fstream.binance.com/pm/ws
+binanceusdm,spot,wss://stream.binance.com:9443/ws
+binanceusdm,margin,wss://stream.binance.com:9443/ws
+binanceusdm,future,wss://fstream.binance.com/ws
+binanceusdm,delivery,wss://dstream.binance.com/ws
+binanceusdm,ws-api,"{'spot': 'wss://ws-api.binance.com:443/ws-api/v3', 'future': 'wss://ws-fapi.binance.com/ws-fapi/v1', 'delivery': 'wss://ws-dapi.binance.com/ws-dapi/v1'}"
+binanceusdm,papi,wss://fstream.binance.com/pm/ws
+bingx,spot,wss://open-api-ws.bingx.com/market
+bingx,linear,wss://open-api-swap.bingx.com/swap-market
+bingx,inverse,wss://open-api-cswap-ws.bingx.com/market
+bitfinex,public,wss://api-pub.bitfinex.com/ws/2
+bitfinex,private,wss://api.bitfinex.com/ws/2
+bitget,public,wss://ws.bitget.com/v2/ws/public
+bitget,private,wss://ws.bitget.com/v2/ws/private
+bithumb,default,wss://pubwss.bithumb.com/pub/ws
+bitmart,spot,"{'public': 'wss://ws-manager-compress.{hostname}/api?protocol=1.1', 'private': 'wss://ws-manager-compress.{hostname}/user?protocol=1.1'}"
+bitmart,swap,"{'public': 'wss://openapi-ws-v2.{hostname}/api?protocol=1.1', 'private': 'wss://openapi-ws-v2.{hostname}/user?protocol=1.1'}"
+bitmex,default,wss://ws.bitmex.com/realtime
+bitrue,public,wss://ws.bitrue.com/market/ws
+bitrue,private,wss://wsapi.bitrue.com
+bitstamp,default,wss://ws.bitstamp.net
+bittrade,api,"{'public': 'wss://{hostname}/ws', 'private': 'wss://{hostname}/ws/v2'}"
+bitvavo,default,wss://ws.bitvavo.com/v2
+blockchaincom,default,wss://ws.blockchain.info/mercury-gateway/v1/ws
+blofin,swap,"{'public': 'wss://openapi.blofin.com/ws/public', 'private': 'wss://openapi.blofin.com/ws/private'}"
+bybit,public,"{'spot': 'wss://stream.{hostname}/v5/public/spot', 'inverse': 'wss://stream.{hostname}/v5/public/inverse', 'option': 'wss://stream.{hostname}/v5/public/option', 'linear': 'wss://stream.{hostname}/v5/public/linear'}"
+bybit,private,"{'spot': {'unified': 'wss://stream.{hostname}/v5/private', 'nonUnified': 'wss://stream.{hostname}/spot/private/v3'}, 'contract': 'wss://stream.{hostname}/v5/private', 'usdc': 'wss://stream.{hostname}/trade/option/usdc/private/v1', 'trade': 'wss://stream.bybit.com/v5/trade'}"
+cex,default,wss://ws.cex.io/ws
+coinbase,default,wss://advanced-trade-ws.coinbase.com
+coinbaseadvanced,default,wss://advanced-trade-ws.coinbase.com
+coinbaseexchange,default,wss://ws-feed.exchange.coinbase.com
+coinbaseinternational,default,wss://ws-md.international.coinbase.com
+coincatch,public,wss://ws.coincatch.com/public/v1/stream
+coincatch,private,wss://ws.coincatch.com/private/v1/stream
+coincheck,default,wss://ws-api.coincheck.com/
+coinex,spot,wss://socket.coinex.com/v2/spot/
+coinex,swap,wss://socket.coinex.com/v2/futures/
+coinone,default,wss://stream.coinone.co.kr
+cryptocom,public,wss://stream.crypto.com/exchange/v1/market
+cryptocom,private,wss://stream.crypto.com/exchange/v1/user
+defx,public,wss://marketfeed.api.defx.com/pricefeed
+defx,private,wss://userfeed.api.defx.com/user
+deribit,default,wss://www.deribit.com/ws/api/v2
+derive,default,wss://api.lyra.finance/ws
+exmo,public,wss://ws-api.exmo.com:443/v1/public
+exmo,spot,wss://ws-api.exmo.com:443/v1/private
+exmo,margin,wss://ws-api.exmo.com:443/v1/margin/private
+gate,default,wss://ws.gate.io/v4
+gateio,default,wss://ws.gate.io/v4
+gemini,default,wss://api.gemini.com
+hashkey,public,wss://stream-glb.hashkey.com/quote/ws/v1
+hashkey,private,wss://stream-glb.hashkey.com/api/v1/ws
+hitbtc,public,wss://api.hitbtc.com/api/3/ws/public
+hitbtc,private,wss://api.hitbtc.com/api/3/ws/trading
+hollaex,default,wss://api.hollaex.com/stream
+htx,api,"{'spot': {'public': 'wss://{hostname}/ws', 'private': 'wss://{hostname}/ws/v2', 'feed': 'wss://{hostname}/feed'}, 'future': {'linear': {'public': 'wss://api.hbdm.com/linear-swap-ws', 'private': 'wss://api.hbdm.com/linear-swap-notification'}, 'inverse': {'public': 'wss://api.hbdm.com/ws', 'private': 'wss://api.hbdm.com/notification'}}, 'swap': {'inverse': {'public': 'wss://api.hbdm.com/swap-ws', 'private': 'wss://api.hbdm.com/swap-notification'}, 'linear': {'public': 'wss://api.hbdm.com/linear-swap-ws', 'private': 'wss://api.hbdm.com/linear-swap-notification'}}}"
+htx,api-aws,"{'spot': {'public': 'wss://api-aws.huobi.pro/ws', 'private': 'wss://api-aws.huobi.pro/ws/v2', 'feed': 'wss://{hostname}/feed'}, 'future': {'linear': {'public': 'wss://api.hbdm.vn/linear-swap-ws', 'private': 'wss://api.hbdm.vn/linear-swap-notification'}, 'inverse': {'public': 'wss://api.hbdm.vn/ws', 'private': 'wss://api.hbdm.vn/notification'}}, 'swap': {'linear': {'public': 'wss://api.hbdm.vn/linear-swap-ws', 'private': 'wss://api.hbdm.vn/linear-swap-notification'}, 'inverse': {'public': 'wss://api.hbdm.vn/swap-ws', 'private': 'wss://api.hbdm.vn/swap-notification'}}}"
+huobi,api,"{'spot': {'public': 'wss://{hostname}/ws', 'private': 'wss://{hostname}/ws/v2', 'feed': 'wss://{hostname}/feed'}, 'future': {'linear': {'public': 'wss://api.hbdm.com/linear-swap-ws', 'private': 'wss://api.hbdm.com/linear-swap-notification'}, 'inverse': {'public': 'wss://api.hbdm.com/ws', 'private': 'wss://api.hbdm.com/notification'}}, 'swap': {'inverse': {'public': 'wss://api.hbdm.com/swap-ws', 'private': 'wss://api.hbdm.com/swap-notification'}, 'linear': {'public': 'wss://api.hbdm.com/linear-swap-ws', 'private': 'wss://api.hbdm.com/linear-swap-notification'}}}"
+huobi,api-aws,"{'spot': {'public': 'wss://api-aws.huobi.pro/ws', 'private': 'wss://api-aws.huobi.pro/ws/v2', 'feed': 'wss://{hostname}/feed'}, 'future': {'linear': {'public': 'wss://api.hbdm.vn/linear-swap-ws', 'private': 'wss://api.hbdm.vn/linear-swap-notification'}, 'inverse': {'public': 'wss://api.hbdm.vn/ws', 'private': 'wss://api.hbdm.vn/notification'}}, 'swap': {'linear': {'public': 'wss://api.hbdm.vn/linear-swap-ws', 'private': 'wss://api.hbdm.vn/linear-swap-notification'}, 'inverse': {'public': 'wss://api.hbdm.vn/swap-ws', 'private': 'wss://api.hbdm.vn/swap-notification'}}}"
+hyperliquid,public,wss://api.hyperliquid.xyz/ws
+independentreserve,default,wss://websockets.independentreserve.com
+kraken,public,wss://ws.kraken.com
+kraken,private,wss://ws-auth.kraken.com
+kraken,privateV2,wss://ws-auth.kraken.com/v2
+kraken,publicV2,wss://ws.kraken.com/v2
+kraken,beta,wss://beta-ws.kraken.com
+kraken,beta-private,wss://beta-ws-auth.kraken.com
+krakenfutures,default,wss://futures.kraken.com/ws/v1
+lbank,default,wss://www.lbkex.net/ws/V2/
+luno,default,wss://ws.luno.com/api/1
+mexc,spot,wss://wbs.mexc.com/ws
+mexc,swap,wss://contract.mexc.com/edge
+modetrade,public,wss://ws-evm.orderly.org/ws/stream
+modetrade,private,wss://ws-private-evm.orderly.org/v2/ws/private/stream
+myokx,default,wss://wseea.okx.com:8443/ws/v5
+ndax,default,wss://api.ndax.io/WSGateway
+okcoin,default,wss://real.okcoin.com:8443/ws/v3
+okx,default,wss://ws.okx.com:8443/ws/v5
+okxus,default,wss://wsus.okx.com:8443/ws/v5
+onetrading,default,wss://streams.onetrading.com/
+oxfun,default,wss://api.ox.fun/v2/websocket
+p2b,default,wss://apiws.p2pb2b.com/
+paradex,default,wss://ws.api.prod.paradex.trade/v1
+phemex,default,wss://ws.phemex.com
+poloniex,public,wss://ws.poloniex.com/ws/public
+poloniex,private,wss://ws.poloniex.com/ws/private
+probit,default,wss://api.probit.com/api/exchange/v1/ws
+tradeogre,default,wss://tradeogre.com:8443
+upbit,default,wss://{hostname}/websocket/v1
+vertex,default,wss://gateway.prod.vertexprotocol.com/v1/subscribe
+whitebit,default,wss://api.whitebit.com/ws
+woo,public,wss://wss.woox.io/ws/stream
+woo,private,wss://wss.woox.io/v2/ws/private/stream
+woofipro,public,wss://ws-evm.orderly.org/ws/stream
+woofipro,private,wss://ws-private-evm.orderly.org/v2/ws/private/stream
+xt,spot,wss://stream.xt.com
+xt,contract,wss://fstream.xt.com/ws
