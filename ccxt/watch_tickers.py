@@ -27,7 +27,7 @@ def save_ticker_to_csv(exchange_id, symbol, ticker):
     timestamp_ms = ticker.get('timestamp') or int(time.time() * 1000)
     formatted_time = format_time_from_timestamp(timestamp_ms)
     symbol_clean = symbol.replace("/", "_").replace(":", "_")
-    csv_file = f'csv/{symbol_clean}.csv'
+    csv_file = f'{csv_dir}/{symbol_clean}.csv'
     write_header = not os.path.exists(csv_file)
 
     row = [
@@ -95,7 +95,12 @@ async def main():
         "ACH/USDT:USDT",
     ]
 
-    exchange_ids = ['okx', 'binance', 'bybit', 'bitget', 'gateio']
+    # exchange_ids = ['okx', 'binance', 'bybit', 'bitget', 'gateio']
+    exchange_ids = [
+        'binanceusdm', 'blofin', 'kucoinfutures', 'bingx', 'mexc',
+        'binance', 'phemex', 'bybit', 'bitrue', 'bitmart',
+        'xt', 'bitget', 'gateio', 'gate'
+    ]
 
     tasks = [
         asyncio.create_task(watch_tickers(exchange_id, symbols))
