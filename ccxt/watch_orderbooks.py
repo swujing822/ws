@@ -69,13 +69,14 @@ async def watch_orderbooks(exchange_id, symbols):
 
     try:
         if exchange.has['watchOrderBookForSymbols']:
-            while True:
-                try:
-                    orderbook = await exchange.watchOrderBookForSymbols(symbols)
-                    symbol = orderbook['symbol']
-                    print(exchange.iso8601(exchange.milliseconds()), symbol, orderbook['asks'][0], orderbook['bids'][0])
-                except Exception as e:
-                    print(e)
+            
+            # while True:
+            #     try:
+            #         orderbook = await exchange.watchOrderBookForSymbols(symbols)
+            #         symbol = orderbook['symbol']
+            #         print(exchange.iso8601(exchange.milliseconds()), symbol, orderbook['asks'][0], orderbook['bids'][0])
+            #     except Exception as e:
+            #         print(e)
                     # stop the loop on exception or leave it commented to retry
                     # raise e
         # if hasattr(exchange, 'watchOrderBookForSymbols'):
