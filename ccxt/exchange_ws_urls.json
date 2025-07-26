@@ -1,0 +1,2183 @@
+[
+  {
+    "Exchange": "alpaca",
+    "Type": "broker",
+    "WebSocket URL": "https://broker-api.{hostname}"
+  },
+  {
+    "Exchange": "alpaca",
+    "Type": "trader",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "alpaca",
+    "Type": "market",
+    "WebSocket URL": "https://data.{hostname}"
+  },
+  {
+    "Exchange": "alpaca",
+    "Type": "ws",
+    "WebSocket URL": {
+      "crypto": "wss://stream.data.alpaca.markets/v1beta2/crypto",
+      "trading": "wss://api.alpaca.markets/stream"
+    }
+  },
+  {
+    "Exchange": "apex",
+    "Type": "public",
+    "WebSocket URL": "https://{hostname}/api"
+  },
+  {
+    "Exchange": "apex",
+    "Type": "private",
+    "WebSocket URL": "https://{hostname}/api"
+  },
+  {
+    "Exchange": "apex",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://quote.omni.apex.exchange/realtime_public?v=2",
+      "private": "wss://quote.omni.apex.exchange/realtime_private?v=2"
+    }
+  },
+  {
+    "Exchange": "ascendex",
+    "Type": "rest",
+    "WebSocket URL": "https://ascendex.com"
+  },
+  {
+    "Exchange": "ascendex",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://ascendex.com:443/api/pro/v2/stream",
+      "private": "wss://ascendex.com:443/{accountGroup}/api/pro/v2/stream"
+    }
+  },
+  {
+    "Exchange": "bequant",
+    "Type": "public",
+    "WebSocket URL": "https://api.bequant.io/api/3"
+  },
+  {
+    "Exchange": "bequant",
+    "Type": "private",
+    "WebSocket URL": "https://api.bequant.io/api/3"
+  },
+  {
+    "Exchange": "bequant",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://api.bequant.io/api/3/ws/public",
+      "private": "wss://api.bequant.io/api/3/ws/trading"
+    }
+  },
+  {
+    "Exchange": "binance",
+    "Type": "sapi",
+    "WebSocket URL": "https://api.binance.com/sapi/v1"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "sapiV2",
+    "WebSocket URL": "https://api.binance.com/sapi/v2"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "sapiV3",
+    "WebSocket URL": "https://api.binance.com/sapi/v3"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "sapiV4",
+    "WebSocket URL": "https://api.binance.com/sapi/v4"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "dapiPublic",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v1"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "dapiPrivate",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v1"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "eapiPublic",
+    "WebSocket URL": "https://eapi.binance.com/eapi/v1"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "eapiPrivate",
+    "WebSocket URL": "https://eapi.binance.com/eapi/v1"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "dapiPrivateV2",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v2"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "dapiData",
+    "WebSocket URL": "https://dapi.binance.com/futures/data"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "fapiPublic",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v1"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "fapiPublicV2",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v2"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "fapiPublicV3",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v3"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "fapiPrivate",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v1"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "fapiPrivateV2",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v2"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "fapiPrivateV3",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v3"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "fapiData",
+    "WebSocket URL": "https://fapi.binance.com/futures/data"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "public",
+    "WebSocket URL": "https://api.binance.com/api/v3"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "private",
+    "WebSocket URL": "https://api.binance.com/api/v3"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "v1",
+    "WebSocket URL": "https://api.binance.com/api/v1"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "papi",
+    "WebSocket URL": "https://papi.binance.com/papi/v1"
+  },
+  {
+    "Exchange": "binance",
+    "Type": "ws",
+    "WebSocket URL": {
+      "spot": "wss://stream.binance.com:9443/ws",
+      "margin": "wss://stream.binance.com:9443/ws",
+      "future": "wss://fstream.binance.com/ws",
+      "delivery": "wss://dstream.binance.com/ws",
+      "ws-api": {
+        "spot": "wss://ws-api.binance.com:443/ws-api/v3",
+        "future": "wss://ws-fapi.binance.com/ws-fapi/v1",
+        "delivery": "wss://ws-dapi.binance.com/ws-dapi/v1"
+      },
+      "papi": "wss://fstream.binance.com/pm/ws"
+    }
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "sapi",
+    "WebSocket URL": "https://api.binance.com/sapi/v1"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "sapiV2",
+    "WebSocket URL": "https://api.binance.com/sapi/v2"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "sapiV3",
+    "WebSocket URL": "https://api.binance.com/sapi/v3"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "sapiV4",
+    "WebSocket URL": "https://api.binance.com/sapi/v4"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "dapiPublic",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v1"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "dapiPrivate",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v1"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "eapiPublic",
+    "WebSocket URL": "https://eapi.binance.com/eapi/v1"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "eapiPrivate",
+    "WebSocket URL": "https://eapi.binance.com/eapi/v1"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "dapiPrivateV2",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v2"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "dapiData",
+    "WebSocket URL": "https://dapi.binance.com/futures/data"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "fapiPublic",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v1"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "fapiPublicV2",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v2"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "fapiPublicV3",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v3"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "fapiPrivate",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v1"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "fapiPrivateV2",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v2"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "fapiPrivateV3",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v3"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "fapiData",
+    "WebSocket URL": "https://fapi.binance.com/futures/data"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "public",
+    "WebSocket URL": "https://api.binance.com/api/v3"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "private",
+    "WebSocket URL": "https://api.binance.com/api/v3"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "v1",
+    "WebSocket URL": "https://api.binance.com/api/v1"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "papi",
+    "WebSocket URL": "https://papi.binance.com/papi/v1"
+  },
+  {
+    "Exchange": "binancecoinm",
+    "Type": "ws",
+    "WebSocket URL": {
+      "spot": "wss://stream.binance.com:9443/ws",
+      "margin": "wss://stream.binance.com:9443/ws",
+      "future": "wss://fstream.binance.com/ws",
+      "delivery": "wss://dstream.binance.com/ws",
+      "ws-api": {
+        "spot": "wss://ws-api.binance.com:443/ws-api/v3",
+        "future": "wss://ws-fapi.binance.com/ws-fapi/v1",
+        "delivery": "wss://ws-dapi.binance.com/ws-dapi/v1"
+      },
+      "papi": "wss://fstream.binance.com/pm/ws"
+    }
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "sapi",
+    "WebSocket URL": "https://api.binance.us/sapi/v1"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "sapiV2",
+    "WebSocket URL": "https://api.binance.us/sapi/v2"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "sapiV3",
+    "WebSocket URL": "https://api.binance.us/sapi/v3"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "sapiV4",
+    "WebSocket URL": "https://api.binance.com/sapi/v4"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "dapiPublic",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v1"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "dapiPrivate",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v1"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "eapiPublic",
+    "WebSocket URL": "https://eapi.binance.com/eapi/v1"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "eapiPrivate",
+    "WebSocket URL": "https://eapi.binance.com/eapi/v1"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "dapiPrivateV2",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v2"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "dapiData",
+    "WebSocket URL": "https://dapi.binance.com/futures/data"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "fapiPublic",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v1"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "fapiPublicV2",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v2"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "fapiPublicV3",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v3"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "fapiPrivate",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v1"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "fapiPrivateV2",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v2"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "fapiPrivateV3",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v3"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "fapiData",
+    "WebSocket URL": "https://fapi.binance.com/futures/data"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "public",
+    "WebSocket URL": "https://api.binance.us/api/v3"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "private",
+    "WebSocket URL": "https://api.binance.us/api/v3"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "v1",
+    "WebSocket URL": "https://api.binance.us/api/v1"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "papi",
+    "WebSocket URL": "https://papi.binance.com/papi/v1"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "web",
+    "WebSocket URL": "https://www.binance.us"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "ws",
+    "WebSocket URL": {
+      "spot": "wss://stream.binance.us:9443/ws",
+      "margin": "wss://stream.binance.com:9443/ws",
+      "future": "wss://fstream.binance.com/ws",
+      "delivery": "wss://dstream.binance.com/ws",
+      "ws-api": {
+        "spot": "wss://ws-api.binance.com:443/ws-api/v3",
+        "future": "wss://ws-fapi.binance.com/ws-fapi/v1",
+        "delivery": "wss://ws-dapi.binance.com/ws-dapi/v1"
+      },
+      "papi": "wss://fstream.binance.com/pm/ws"
+    }
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "wapi",
+    "WebSocket URL": "https://api.binance.us/wapi/v3"
+  },
+  {
+    "Exchange": "binanceus",
+    "Type": "v3",
+    "WebSocket URL": "https://api.binance.us/api/v3"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "sapi",
+    "WebSocket URL": "https://api.binance.com/sapi/v1"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "sapiV2",
+    "WebSocket URL": "https://api.binance.com/sapi/v2"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "sapiV3",
+    "WebSocket URL": "https://api.binance.com/sapi/v3"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "sapiV4",
+    "WebSocket URL": "https://api.binance.com/sapi/v4"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "dapiPublic",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v1"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "dapiPrivate",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v1"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "eapiPublic",
+    "WebSocket URL": "https://eapi.binance.com/eapi/v1"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "eapiPrivate",
+    "WebSocket URL": "https://eapi.binance.com/eapi/v1"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "dapiPrivateV2",
+    "WebSocket URL": "https://dapi.binance.com/dapi/v2"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "dapiData",
+    "WebSocket URL": "https://dapi.binance.com/futures/data"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "fapiPublic",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v1"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "fapiPublicV2",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v2"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "fapiPublicV3",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v3"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "fapiPrivate",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v1"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "fapiPrivateV2",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v2"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "fapiPrivateV3",
+    "WebSocket URL": "https://fapi.binance.com/fapi/v3"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "fapiData",
+    "WebSocket URL": "https://fapi.binance.com/futures/data"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "public",
+    "WebSocket URL": "https://api.binance.com/api/v3"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "private",
+    "WebSocket URL": "https://api.binance.com/api/v3"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "v1",
+    "WebSocket URL": "https://api.binance.com/api/v1"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "papi",
+    "WebSocket URL": "https://papi.binance.com/papi/v1"
+  },
+  {
+    "Exchange": "binanceusdm",
+    "Type": "ws",
+    "WebSocket URL": {
+      "spot": "wss://stream.binance.com:9443/ws",
+      "margin": "wss://stream.binance.com:9443/ws",
+      "future": "wss://fstream.binance.com/ws",
+      "delivery": "wss://dstream.binance.com/ws",
+      "ws-api": {
+        "spot": "wss://ws-api.binance.com:443/ws-api/v3",
+        "future": "wss://ws-fapi.binance.com/ws-fapi/v1",
+        "delivery": "wss://ws-dapi.binance.com/ws-dapi/v1"
+      },
+      "papi": "wss://fstream.binance.com/pm/ws"
+    }
+  },
+  {
+    "Exchange": "bingx",
+    "Type": "spot",
+    "WebSocket URL": "https://open-api.{hostname}/openApi"
+  },
+  {
+    "Exchange": "bingx",
+    "Type": "swap",
+    "WebSocket URL": "https://open-api.{hostname}/openApi"
+  },
+  {
+    "Exchange": "bingx",
+    "Type": "contract",
+    "WebSocket URL": "https://open-api.{hostname}/openApi"
+  },
+  {
+    "Exchange": "bingx",
+    "Type": "wallets",
+    "WebSocket URL": "https://open-api.{hostname}/openApi"
+  },
+  {
+    "Exchange": "bingx",
+    "Type": "user",
+    "WebSocket URL": "https://open-api.{hostname}/openApi"
+  },
+  {
+    "Exchange": "bingx",
+    "Type": "subAccount",
+    "WebSocket URL": "https://open-api.{hostname}/openApi"
+  },
+  {
+    "Exchange": "bingx",
+    "Type": "account",
+    "WebSocket URL": "https://open-api.{hostname}/openApi"
+  },
+  {
+    "Exchange": "bingx",
+    "Type": "copyTrading",
+    "WebSocket URL": "https://open-api.{hostname}/openApi"
+  },
+  {
+    "Exchange": "bingx",
+    "Type": "cswap",
+    "WebSocket URL": "https://open-api.{hostname}/openApi"
+  },
+  {
+    "Exchange": "bingx",
+    "Type": "api",
+    "WebSocket URL": "https://open-api.{hostname}/openApi"
+  },
+  {
+    "Exchange": "bingx",
+    "Type": "ws",
+    "WebSocket URL": {
+      "spot": "wss://open-api-ws.bingx.com/market",
+      "linear": "wss://open-api-swap.bingx.com/swap-market",
+      "inverse": "wss://open-api-cswap-ws.bingx.com/market"
+    }
+  },
+  {
+    "Exchange": "bitfinex",
+    "Type": "v1",
+    "WebSocket URL": "https://api.bitfinex.com"
+  },
+  {
+    "Exchange": "bitfinex",
+    "Type": "public",
+    "WebSocket URL": "https://api-pub.bitfinex.com"
+  },
+  {
+    "Exchange": "bitfinex",
+    "Type": "private",
+    "WebSocket URL": "https://api.bitfinex.com"
+  },
+  {
+    "Exchange": "bitfinex",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://api-pub.bitfinex.com/ws/2",
+      "private": "wss://api.bitfinex.com/ws/2"
+    }
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "spot",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "mix",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "user",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "p2p",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "broker",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "margin",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "common",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "tax",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "convert",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "copy",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "earn",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "uta",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://ws.bitget.com/v2/ws/public",
+      "private": "wss://ws.bitget.com/v2/ws/private"
+    }
+  },
+  {
+    "Exchange": "bitget",
+    "Type": "demo",
+    "WebSocket URL": {
+      "public": "wss://wspap.bitget.com/v2/ws/public",
+      "private": "wss://wspap.bitget.com/v2/ws/private"
+    }
+  },
+  {
+    "Exchange": "bithumb",
+    "Type": "public",
+    "WebSocket URL": "https://api.{hostname}/public"
+  },
+  {
+    "Exchange": "bithumb",
+    "Type": "private",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bithumb",
+    "Type": "ws",
+    "WebSocket URL": "wss://pubwss.bithumb.com/pub/ws"
+  },
+  {
+    "Exchange": "bitmart",
+    "Type": "spot",
+    "WebSocket URL": "https://api-cloud.{hostname}"
+  },
+  {
+    "Exchange": "bitmart",
+    "Type": "swap",
+    "WebSocket URL": "https://api-cloud-v2.{hostname}"
+  },
+  {
+    "Exchange": "bitmart",
+    "Type": "ws",
+    "WebSocket URL": {
+      "spot": {
+        "public": "wss://ws-manager-compress.{hostname}/api?protocol=1.1",
+        "private": "wss://ws-manager-compress.{hostname}/user?protocol=1.1"
+      },
+      "swap": {
+        "public": "wss://openapi-ws-v2.{hostname}/api?protocol=1.1",
+        "private": "wss://openapi-ws-v2.{hostname}/user?protocol=1.1"
+      }
+    }
+  },
+  {
+    "Exchange": "bitmex",
+    "Type": "public",
+    "WebSocket URL": "https://www.bitmex.com"
+  },
+  {
+    "Exchange": "bitmex",
+    "Type": "private",
+    "WebSocket URL": "https://www.bitmex.com"
+  },
+  {
+    "Exchange": "bitmex",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws.bitmex.com/realtime"
+  },
+  {
+    "Exchange": "bitopro",
+    "Type": "rest",
+    "WebSocket URL": "https://api.bitopro.com/v3"
+  },
+  {
+    "Exchange": "bitrue",
+    "Type": "spot",
+    "WebSocket URL": "https://www.bitrue.com/api"
+  },
+  {
+    "Exchange": "bitrue",
+    "Type": "fapi",
+    "WebSocket URL": "https://fapi.bitrue.com/fapi"
+  },
+  {
+    "Exchange": "bitrue",
+    "Type": "dapi",
+    "WebSocket URL": "https://fapi.bitrue.com/dapi"
+  },
+  {
+    "Exchange": "bitrue",
+    "Type": "kline",
+    "WebSocket URL": "https://www.bitrue.com/kline-api"
+  },
+  {
+    "Exchange": "bitrue",
+    "Type": "open",
+    "WebSocket URL": "https://open.bitrue.com"
+  },
+  {
+    "Exchange": "bitrue",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://ws.bitrue.com/market/ws",
+      "private": "wss://wsapi.bitrue.com"
+    }
+  },
+  {
+    "Exchange": "bitstamp",
+    "Type": "public",
+    "WebSocket URL": "https://www.bitstamp.net/api"
+  },
+  {
+    "Exchange": "bitstamp",
+    "Type": "private",
+    "WebSocket URL": "https://www.bitstamp.net/api"
+  },
+  {
+    "Exchange": "bitstamp",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws.bitstamp.net"
+  },
+  {
+    "Exchange": "bittrade",
+    "Type": "market",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "bittrade",
+    "Type": "public",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "bittrade",
+    "Type": "private",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "bittrade",
+    "Type": "v2Public",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "bittrade",
+    "Type": "v2Private",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "bittrade",
+    "Type": "ws",
+    "WebSocket URL": {
+      "api": {
+        "public": "wss://{hostname}/ws",
+        "private": "wss://{hostname}/ws/v2"
+      }
+    }
+  },
+  {
+    "Exchange": "bitvavo",
+    "Type": "public",
+    "WebSocket URL": "https://api.bitvavo.com"
+  },
+  {
+    "Exchange": "bitvavo",
+    "Type": "private",
+    "WebSocket URL": "https://api.bitvavo.com"
+  },
+  {
+    "Exchange": "bitvavo",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws.bitvavo.com/v2"
+  },
+  {
+    "Exchange": "blockchaincom",
+    "Type": "public",
+    "WebSocket URL": "https://api.blockchain.com/v3/exchange"
+  },
+  {
+    "Exchange": "blockchaincom",
+    "Type": "private",
+    "WebSocket URL": "https://api.blockchain.com/v3/exchange"
+  },
+  {
+    "Exchange": "blockchaincom",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws.blockchain.info/mercury-gateway/v1/ws"
+  },
+  {
+    "Exchange": "blofin",
+    "Type": "rest",
+    "WebSocket URL": "https://openapi.blofin.com"
+  },
+  {
+    "Exchange": "blofin",
+    "Type": "ws",
+    "WebSocket URL": {
+      "swap": {
+        "public": "wss://openapi.blofin.com/ws/public",
+        "private": "wss://openapi.blofin.com/ws/private"
+      }
+    }
+  },
+  {
+    "Exchange": "bybit",
+    "Type": "spot",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bybit",
+    "Type": "futures",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bybit",
+    "Type": "v2",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bybit",
+    "Type": "public",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bybit",
+    "Type": "private",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "bybit",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": {
+        "spot": "wss://stream.{hostname}/v5/public/spot",
+        "inverse": "wss://stream.{hostname}/v5/public/inverse",
+        "option": "wss://stream.{hostname}/v5/public/option",
+        "linear": "wss://stream.{hostname}/v5/public/linear"
+      },
+      "private": {
+        "spot": {
+          "unified": "wss://stream.{hostname}/v5/private",
+          "nonUnified": "wss://stream.{hostname}/spot/private/v3"
+        },
+        "contract": "wss://stream.{hostname}/v5/private",
+        "usdc": "wss://stream.{hostname}/trade/option/usdc/private/v1",
+        "trade": "wss://stream.bybit.com/v5/trade"
+      }
+    }
+  },
+  {
+    "Exchange": "cex",
+    "Type": "public",
+    "WebSocket URL": "https://trade.cex.io/api/spot/rest-public"
+  },
+  {
+    "Exchange": "cex",
+    "Type": "private",
+    "WebSocket URL": "https://trade.cex.io/api/spot/rest"
+  },
+  {
+    "Exchange": "cex",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws.cex.io/ws"
+  },
+  {
+    "Exchange": "coinbase",
+    "Type": "rest",
+    "WebSocket URL": "https://api.coinbase.com"
+  },
+  {
+    "Exchange": "coinbase",
+    "Type": "ws",
+    "WebSocket URL": "wss://advanced-trade-ws.coinbase.com"
+  },
+  {
+    "Exchange": "coinbaseadvanced",
+    "Type": "rest",
+    "WebSocket URL": "https://api.coinbase.com"
+  },
+  {
+    "Exchange": "coinbaseadvanced",
+    "Type": "ws",
+    "WebSocket URL": "wss://advanced-trade-ws.coinbase.com"
+  },
+  {
+    "Exchange": "coinbaseexchange",
+    "Type": "public",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "coinbaseexchange",
+    "Type": "private",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "coinbaseexchange",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws-feed.exchange.coinbase.com"
+  },
+  {
+    "Exchange": "coinbaseinternational",
+    "Type": "rest",
+    "WebSocket URL": "https://api.international.coinbase.com/api"
+  },
+  {
+    "Exchange": "coinbaseinternational",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws-md.international.coinbase.com"
+  },
+  {
+    "Exchange": "coincatch",
+    "Type": "public",
+    "WebSocket URL": "https://api.coincatch.com"
+  },
+  {
+    "Exchange": "coincatch",
+    "Type": "private",
+    "WebSocket URL": "https://api.coincatch.com"
+  },
+  {
+    "Exchange": "coincatch",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://ws.coincatch.com/public/v1/stream",
+      "private": "wss://ws.coincatch.com/private/v1/stream"
+    }
+  },
+  {
+    "Exchange": "coincheck",
+    "Type": "rest",
+    "WebSocket URL": "https://coincheck.com/api"
+  },
+  {
+    "Exchange": "coincheck",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws-api.coincheck.com/"
+  },
+  {
+    "Exchange": "coinex",
+    "Type": "public",
+    "WebSocket URL": "https://api.coinex.com"
+  },
+  {
+    "Exchange": "coinex",
+    "Type": "private",
+    "WebSocket URL": "https://api.coinex.com"
+  },
+  {
+    "Exchange": "coinex",
+    "Type": "perpetualPublic",
+    "WebSocket URL": "https://api.coinex.com/perpetual"
+  },
+  {
+    "Exchange": "coinex",
+    "Type": "perpetualPrivate",
+    "WebSocket URL": "https://api.coinex.com/perpetual"
+  },
+  {
+    "Exchange": "coinex",
+    "Type": "ws",
+    "WebSocket URL": {
+      "spot": "wss://socket.coinex.com/v2/spot/",
+      "swap": "wss://socket.coinex.com/v2/futures/"
+    }
+  },
+  {
+    "Exchange": "coinone",
+    "Type": "rest",
+    "WebSocket URL": "https://api.coinone.co.kr"
+  },
+  {
+    "Exchange": "coinone",
+    "Type": "v2Public",
+    "WebSocket URL": "https://api.coinone.co.kr/public/v2"
+  },
+  {
+    "Exchange": "coinone",
+    "Type": "v2Private",
+    "WebSocket URL": "https://api.coinone.co.kr/v2"
+  },
+  {
+    "Exchange": "coinone",
+    "Type": "v2_1Private",
+    "WebSocket URL": "https://api.coinone.co.kr/v2.1"
+  },
+  {
+    "Exchange": "coinone",
+    "Type": "ws",
+    "WebSocket URL": "wss://stream.coinone.co.kr"
+  },
+  {
+    "Exchange": "cryptocom",
+    "Type": "base",
+    "WebSocket URL": "https://api.crypto.com"
+  },
+  {
+    "Exchange": "cryptocom",
+    "Type": "v1",
+    "WebSocket URL": "https://api.crypto.com/exchange/v1"
+  },
+  {
+    "Exchange": "cryptocom",
+    "Type": "v2",
+    "WebSocket URL": "https://api.crypto.com/v2"
+  },
+  {
+    "Exchange": "cryptocom",
+    "Type": "derivatives",
+    "WebSocket URL": "https://deriv-api.crypto.com/v1"
+  },
+  {
+    "Exchange": "cryptocom",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://stream.crypto.com/exchange/v1/market",
+      "private": "wss://stream.crypto.com/exchange/v1/user"
+    }
+  },
+  {
+    "Exchange": "defx",
+    "Type": "public",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "defx",
+    "Type": "private",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "defx",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://marketfeed.api.defx.com/pricefeed",
+      "private": "wss://userfeed.api.defx.com/user"
+    }
+  },
+  {
+    "Exchange": "deribit",
+    "Type": "rest",
+    "WebSocket URL": "https://www.deribit.com"
+  },
+  {
+    "Exchange": "deribit",
+    "Type": "ws",
+    "WebSocket URL": "wss://www.deribit.com/ws/api/v2"
+  },
+  {
+    "Exchange": "derive",
+    "Type": "public",
+    "WebSocket URL": "https://api.lyra.finance/public"
+  },
+  {
+    "Exchange": "derive",
+    "Type": "private",
+    "WebSocket URL": "https://api.lyra.finance/private"
+  },
+  {
+    "Exchange": "derive",
+    "Type": "ws",
+    "WebSocket URL": "wss://api.lyra.finance/ws"
+  },
+  {
+    "Exchange": "exmo",
+    "Type": "public",
+    "WebSocket URL": "https://api.exmo.com"
+  },
+  {
+    "Exchange": "exmo",
+    "Type": "private",
+    "WebSocket URL": "https://api.exmo.com"
+  },
+  {
+    "Exchange": "exmo",
+    "Type": "web",
+    "WebSocket URL": "https://exmo.me"
+  },
+  {
+    "Exchange": "exmo",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://ws-api.exmo.com:443/v1/public",
+      "spot": "wss://ws-api.exmo.com:443/v1/private",
+      "margin": "wss://ws-api.exmo.com:443/v1/margin/private"
+    }
+  },
+  {
+    "Exchange": "gate",
+    "Type": "public",
+    "WebSocket URL": {
+      "wallet": "https://api.gateio.ws/api/v4",
+      "futures": "https://api.gateio.ws/api/v4",
+      "margin": "https://api.gateio.ws/api/v4",
+      "delivery": "https://api.gateio.ws/api/v4",
+      "spot": "https://api.gateio.ws/api/v4",
+      "options": "https://api.gateio.ws/api/v4",
+      "sub_accounts": "https://api.gateio.ws/api/v4",
+      "earn": "https://api.gateio.ws/api/v4"
+    }
+  },
+  {
+    "Exchange": "gate",
+    "Type": "private",
+    "WebSocket URL": {
+      "withdrawals": "https://api.gateio.ws/api/v4",
+      "wallet": "https://api.gateio.ws/api/v4",
+      "futures": "https://api.gateio.ws/api/v4",
+      "margin": "https://api.gateio.ws/api/v4",
+      "delivery": "https://api.gateio.ws/api/v4",
+      "spot": "https://api.gateio.ws/api/v4",
+      "options": "https://api.gateio.ws/api/v4",
+      "subAccounts": "https://api.gateio.ws/api/v4",
+      "unified": "https://api.gateio.ws/api/v4",
+      "rebate": "https://api.gateio.ws/api/v4",
+      "earn": "https://api.gateio.ws/api/v4",
+      "account": "https://api.gateio.ws/api/v4",
+      "loan": "https://api.gateio.ws/api/v4"
+    }
+  },
+  {
+    "Exchange": "gate",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws.gate.io/v4"
+  },
+  {
+    "Exchange": "gate",
+    "Type": "spot",
+    "WebSocket URL": "wss://api.gateio.ws/ws/v4/"
+  },
+  {
+    "Exchange": "gate",
+    "Type": "swap",
+    "WebSocket URL": {
+      "usdt": "wss://fx-ws.gateio.ws/v4/ws/usdt",
+      "btc": "wss://fx-ws.gateio.ws/v4/ws/btc"
+    }
+  },
+  {
+    "Exchange": "gate",
+    "Type": "future",
+    "WebSocket URL": {
+      "usdt": "wss://fx-ws.gateio.ws/v4/ws/delivery/usdt",
+      "btc": "wss://fx-ws.gateio.ws/v4/ws/delivery/btc"
+    }
+  },
+  {
+    "Exchange": "gate",
+    "Type": "option",
+    "WebSocket URL": {
+      "usdt": "wss://op-ws.gateio.live/v4/ws/usdt",
+      "btc": "wss://op-ws.gateio.live/v4/ws/btc"
+    }
+  },
+  {
+    "Exchange": "gateio",
+    "Type": "public",
+    "WebSocket URL": {
+      "wallet": "https://api.gateio.ws/api/v4",
+      "futures": "https://api.gateio.ws/api/v4",
+      "margin": "https://api.gateio.ws/api/v4",
+      "delivery": "https://api.gateio.ws/api/v4",
+      "spot": "https://api.gateio.ws/api/v4",
+      "options": "https://api.gateio.ws/api/v4",
+      "sub_accounts": "https://api.gateio.ws/api/v4",
+      "earn": "https://api.gateio.ws/api/v4"
+    }
+  },
+  {
+    "Exchange": "gateio",
+    "Type": "private",
+    "WebSocket URL": {
+      "withdrawals": "https://api.gateio.ws/api/v4",
+      "wallet": "https://api.gateio.ws/api/v4",
+      "futures": "https://api.gateio.ws/api/v4",
+      "margin": "https://api.gateio.ws/api/v4",
+      "delivery": "https://api.gateio.ws/api/v4",
+      "spot": "https://api.gateio.ws/api/v4",
+      "options": "https://api.gateio.ws/api/v4",
+      "subAccounts": "https://api.gateio.ws/api/v4",
+      "unified": "https://api.gateio.ws/api/v4",
+      "rebate": "https://api.gateio.ws/api/v4",
+      "earn": "https://api.gateio.ws/api/v4",
+      "account": "https://api.gateio.ws/api/v4",
+      "loan": "https://api.gateio.ws/api/v4"
+    }
+  },
+  {
+    "Exchange": "gateio",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws.gate.io/v4"
+  },
+  {
+    "Exchange": "gateio",
+    "Type": "spot",
+    "WebSocket URL": "wss://api.gateio.ws/ws/v4/"
+  },
+  {
+    "Exchange": "gateio",
+    "Type": "swap",
+    "WebSocket URL": {
+      "usdt": "wss://fx-ws.gateio.ws/v4/ws/usdt",
+      "btc": "wss://fx-ws.gateio.ws/v4/ws/btc"
+    }
+  },
+  {
+    "Exchange": "gateio",
+    "Type": "future",
+    "WebSocket URL": {
+      "usdt": "wss://fx-ws.gateio.ws/v4/ws/delivery/usdt",
+      "btc": "wss://fx-ws.gateio.ws/v4/ws/delivery/btc"
+    }
+  },
+  {
+    "Exchange": "gateio",
+    "Type": "option",
+    "WebSocket URL": {
+      "usdt": "wss://op-ws.gateio.live/v4/ws/usdt",
+      "btc": "wss://op-ws.gateio.live/v4/ws/btc"
+    }
+  },
+  {
+    "Exchange": "gemini",
+    "Type": "public",
+    "WebSocket URL": "https://api.gemini.com"
+  },
+  {
+    "Exchange": "gemini",
+    "Type": "private",
+    "WebSocket URL": "https://api.gemini.com"
+  },
+  {
+    "Exchange": "gemini",
+    "Type": "web",
+    "WebSocket URL": "https://docs.gemini.com"
+  },
+  {
+    "Exchange": "gemini",
+    "Type": "webExchange",
+    "WebSocket URL": "https://exchange.gemini.com"
+  },
+  {
+    "Exchange": "gemini",
+    "Type": "ws",
+    "WebSocket URL": "wss://api.gemini.com"
+  },
+  {
+    "Exchange": "hashkey",
+    "Type": "public",
+    "WebSocket URL": "https://api-glb.hashkey.com"
+  },
+  {
+    "Exchange": "hashkey",
+    "Type": "private",
+    "WebSocket URL": "https://api-glb.hashkey.com"
+  },
+  {
+    "Exchange": "hashkey",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://stream-glb.hashkey.com/quote/ws/v1",
+      "private": "wss://stream-glb.hashkey.com/api/v1/ws"
+    }
+  },
+  {
+    "Exchange": "hashkey",
+    "Type": "test",
+    "WebSocket URL": {
+      "ws": {
+        "public": "wss://stream-glb.sim.hashkeydev.com/quote/ws/v1",
+        "private": "wss://stream-glb.sim.hashkeydev.com/api/v1/ws"
+      }
+    }
+  },
+  {
+    "Exchange": "hitbtc",
+    "Type": "public",
+    "WebSocket URL": "https://api.hitbtc.com/api/3"
+  },
+  {
+    "Exchange": "hitbtc",
+    "Type": "private",
+    "WebSocket URL": "https://api.hitbtc.com/api/3"
+  },
+  {
+    "Exchange": "hitbtc",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://api.hitbtc.com/api/3/ws/public",
+      "private": "wss://api.hitbtc.com/api/3/ws/trading"
+    }
+  },
+  {
+    "Exchange": "hollaex",
+    "Type": "rest",
+    "WebSocket URL": "https://api.hollaex.com"
+  },
+  {
+    "Exchange": "hollaex",
+    "Type": "ws",
+    "WebSocket URL": "wss://api.hollaex.com/stream"
+  },
+  {
+    "Exchange": "htx",
+    "Type": "status",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "htx",
+    "Type": "contract",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "htx",
+    "Type": "spot",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "htx",
+    "Type": "public",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "htx",
+    "Type": "private",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "htx",
+    "Type": "v2Public",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "htx",
+    "Type": "v2Private",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "htx",
+    "Type": "ws",
+    "WebSocket URL": {
+      "api": {
+        "spot": {
+          "public": "wss://{hostname}/ws",
+          "private": "wss://{hostname}/ws/v2",
+          "feed": "wss://{hostname}/feed"
+        },
+        "future": {
+          "linear": {
+            "public": "wss://api.hbdm.com/linear-swap-ws",
+            "private": "wss://api.hbdm.com/linear-swap-notification"
+          },
+          "inverse": {
+            "public": "wss://api.hbdm.com/ws",
+            "private": "wss://api.hbdm.com/notification"
+          }
+        },
+        "swap": {
+          "inverse": {
+            "public": "wss://api.hbdm.com/swap-ws",
+            "private": "wss://api.hbdm.com/swap-notification"
+          },
+          "linear": {
+            "public": "wss://api.hbdm.com/linear-swap-ws",
+            "private": "wss://api.hbdm.com/linear-swap-notification"
+          }
+        }
+      },
+      "api-aws": {
+        "spot": {
+          "public": "wss://api-aws.huobi.pro/ws",
+          "private": "wss://api-aws.huobi.pro/ws/v2",
+          "feed": "wss://{hostname}/feed"
+        },
+        "future": {
+          "linear": {
+            "public": "wss://api.hbdm.vn/linear-swap-ws",
+            "private": "wss://api.hbdm.vn/linear-swap-notification"
+          },
+          "inverse": {
+            "public": "wss://api.hbdm.vn/ws",
+            "private": "wss://api.hbdm.vn/notification"
+          }
+        },
+        "swap": {
+          "linear": {
+            "public": "wss://api.hbdm.vn/linear-swap-ws",
+            "private": "wss://api.hbdm.vn/linear-swap-notification"
+          },
+          "inverse": {
+            "public": "wss://api.hbdm.vn/swap-ws",
+            "private": "wss://api.hbdm.vn/swap-notification"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Exchange": "huobi",
+    "Type": "status",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "huobi",
+    "Type": "contract",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "huobi",
+    "Type": "spot",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "huobi",
+    "Type": "public",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "huobi",
+    "Type": "private",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "huobi",
+    "Type": "v2Public",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "huobi",
+    "Type": "v2Private",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "huobi",
+    "Type": "ws",
+    "WebSocket URL": {
+      "api": {
+        "spot": {
+          "public": "wss://{hostname}/ws",
+          "private": "wss://{hostname}/ws/v2",
+          "feed": "wss://{hostname}/feed"
+        },
+        "future": {
+          "linear": {
+            "public": "wss://api.hbdm.com/linear-swap-ws",
+            "private": "wss://api.hbdm.com/linear-swap-notification"
+          },
+          "inverse": {
+            "public": "wss://api.hbdm.com/ws",
+            "private": "wss://api.hbdm.com/notification"
+          }
+        },
+        "swap": {
+          "inverse": {
+            "public": "wss://api.hbdm.com/swap-ws",
+            "private": "wss://api.hbdm.com/swap-notification"
+          },
+          "linear": {
+            "public": "wss://api.hbdm.com/linear-swap-ws",
+            "private": "wss://api.hbdm.com/linear-swap-notification"
+          }
+        }
+      },
+      "api-aws": {
+        "spot": {
+          "public": "wss://api-aws.huobi.pro/ws",
+          "private": "wss://api-aws.huobi.pro/ws/v2",
+          "feed": "wss://{hostname}/feed"
+        },
+        "future": {
+          "linear": {
+            "public": "wss://api.hbdm.vn/linear-swap-ws",
+            "private": "wss://api.hbdm.vn/linear-swap-notification"
+          },
+          "inverse": {
+            "public": "wss://api.hbdm.vn/ws",
+            "private": "wss://api.hbdm.vn/notification"
+          }
+        },
+        "swap": {
+          "linear": {
+            "public": "wss://api.hbdm.vn/linear-swap-ws",
+            "private": "wss://api.hbdm.vn/linear-swap-notification"
+          },
+          "inverse": {
+            "public": "wss://api.hbdm.vn/swap-ws",
+            "private": "wss://api.hbdm.vn/swap-notification"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Exchange": "hyperliquid",
+    "Type": "public",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "hyperliquid",
+    "Type": "private",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "hyperliquid",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://api.hyperliquid.xyz/ws"
+    }
+  },
+  {
+    "Exchange": "independentreserve",
+    "Type": "public",
+    "WebSocket URL": "https://api.independentreserve.com/Public"
+  },
+  {
+    "Exchange": "independentreserve",
+    "Type": "private",
+    "WebSocket URL": "https://api.independentreserve.com/Private"
+  },
+  {
+    "Exchange": "independentreserve",
+    "Type": "ws",
+    "WebSocket URL": "wss://websockets.independentreserve.com"
+  },
+  {
+    "Exchange": "kraken",
+    "Type": "public",
+    "WebSocket URL": "https://api.kraken.com"
+  },
+  {
+    "Exchange": "kraken",
+    "Type": "private",
+    "WebSocket URL": "https://api.kraken.com"
+  },
+  {
+    "Exchange": "kraken",
+    "Type": "zendesk",
+    "WebSocket URL": "https://kraken.zendesk.com/api/v2/help_center/en-us/articles"
+  },
+  {
+    "Exchange": "kraken",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://ws.kraken.com",
+      "private": "wss://ws-auth.kraken.com",
+      "privateV2": "wss://ws-auth.kraken.com/v2",
+      "publicV2": "wss://ws.kraken.com/v2",
+      "beta": "wss://beta-ws.kraken.com",
+      "beta-private": "wss://beta-ws-auth.kraken.com"
+    }
+  },
+  {
+    "Exchange": "krakenfutures",
+    "Type": "charts",
+    "WebSocket URL": "https://futures.kraken.com/api/charts/"
+  },
+  {
+    "Exchange": "krakenfutures",
+    "Type": "history",
+    "WebSocket URL": "https://futures.kraken.com/api/history/"
+  },
+  {
+    "Exchange": "krakenfutures",
+    "Type": "feeschedules",
+    "WebSocket URL": "https://futures.kraken.com/api/feeschedules/"
+  },
+  {
+    "Exchange": "krakenfutures",
+    "Type": "public",
+    "WebSocket URL": "https://futures.kraken.com/derivatives/api/"
+  },
+  {
+    "Exchange": "krakenfutures",
+    "Type": "private",
+    "WebSocket URL": "https://futures.kraken.com/derivatives/api/"
+  },
+  {
+    "Exchange": "krakenfutures",
+    "Type": "ws",
+    "WebSocket URL": "wss://futures.kraken.com/ws/v1"
+  },
+  {
+    "Exchange": "kucoin",
+    "Type": "public",
+    "WebSocket URL": "https://api.kucoin.com"
+  },
+  {
+    "Exchange": "kucoin",
+    "Type": "private",
+    "WebSocket URL": "https://api.kucoin.com"
+  },
+  {
+    "Exchange": "kucoin",
+    "Type": "futuresPrivate",
+    "WebSocket URL": "https://api-futures.kucoin.com"
+  },
+  {
+    "Exchange": "kucoin",
+    "Type": "futuresPublic",
+    "WebSocket URL": "https://api-futures.kucoin.com"
+  },
+  {
+    "Exchange": "kucoin",
+    "Type": "webExchange",
+    "WebSocket URL": "https://kucoin.com/_api"
+  },
+  {
+    "Exchange": "kucoin",
+    "Type": "broker",
+    "WebSocket URL": "https://api-broker.kucoin.com"
+  },
+  {
+    "Exchange": "kucoin",
+    "Type": "earn",
+    "WebSocket URL": "https://api.kucoin.com"
+  },
+  {
+    "Exchange": "kucoinfutures",
+    "Type": "public",
+    "WebSocket URL": "https://openapi-v2.kucoin.com"
+  },
+  {
+    "Exchange": "kucoinfutures",
+    "Type": "private",
+    "WebSocket URL": "https://openapi-v2.kucoin.com"
+  },
+  {
+    "Exchange": "kucoinfutures",
+    "Type": "futuresPrivate",
+    "WebSocket URL": "https://api-futures.kucoin.com"
+  },
+  {
+    "Exchange": "kucoinfutures",
+    "Type": "futuresPublic",
+    "WebSocket URL": "https://api-futures.kucoin.com"
+  },
+  {
+    "Exchange": "kucoinfutures",
+    "Type": "webExchange",
+    "WebSocket URL": "https://futures.kucoin.com/_api/web-front"
+  },
+  {
+    "Exchange": "kucoinfutures",
+    "Type": "broker",
+    "WebSocket URL": "https://api-broker.kucoin.com"
+  },
+  {
+    "Exchange": "kucoinfutures",
+    "Type": "earn",
+    "WebSocket URL": "https://api.kucoin.com"
+  },
+  {
+    "Exchange": "lbank",
+    "Type": "rest",
+    "WebSocket URL": "https://api.lbank.info"
+  },
+  {
+    "Exchange": "lbank",
+    "Type": "contract",
+    "WebSocket URL": "https://lbkperp.lbank.com"
+  },
+  {
+    "Exchange": "lbank",
+    "Type": "ws",
+    "WebSocket URL": "wss://www.lbkex.net/ws/V2/"
+  },
+  {
+    "Exchange": "luno",
+    "Type": "public",
+    "WebSocket URL": "https://api.luno.com/api"
+  },
+  {
+    "Exchange": "luno",
+    "Type": "private",
+    "WebSocket URL": "https://api.luno.com/api"
+  },
+  {
+    "Exchange": "luno",
+    "Type": "exchange",
+    "WebSocket URL": "https://api.luno.com/api/exchange"
+  },
+  {
+    "Exchange": "luno",
+    "Type": "exchangePrivate",
+    "WebSocket URL": "https://api.luno.com/api/exchange"
+  },
+  {
+    "Exchange": "luno",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws.luno.com/api/1"
+  },
+  {
+    "Exchange": "mexc",
+    "Type": "spot",
+    "WebSocket URL": {
+      "public": "https://api.mexc.com",
+      "private": "https://api.mexc.com"
+    }
+  },
+  {
+    "Exchange": "mexc",
+    "Type": "spot2",
+    "WebSocket URL": {
+      "public": "https://www.mexc.com/open/api/v2",
+      "private": "https://www.mexc.com/open/api/v2"
+    }
+  },
+  {
+    "Exchange": "mexc",
+    "Type": "contract",
+    "WebSocket URL": {
+      "public": "https://contract.mexc.com/api/v1/contract",
+      "private": "https://contract.mexc.com/api/v1/private"
+    }
+  },
+  {
+    "Exchange": "mexc",
+    "Type": "broker",
+    "WebSocket URL": {
+      "private": "https://api.mexc.com/api/v3/broker"
+    }
+  },
+  {
+    "Exchange": "mexc",
+    "Type": "ws",
+    "WebSocket URL": {
+      "spot": "wss://wbs.mexc.com/ws",
+      "swap": "wss://contract.mexc.com/edge"
+    }
+  },
+  {
+    "Exchange": "modetrade",
+    "Type": "public",
+    "WebSocket URL": "https://api-evm.orderly.org"
+  },
+  {
+    "Exchange": "modetrade",
+    "Type": "private",
+    "WebSocket URL": "https://api-evm.orderly.org"
+  },
+  {
+    "Exchange": "modetrade",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://ws-evm.orderly.org/ws/stream",
+      "private": "wss://ws-private-evm.orderly.org/v2/ws/private/stream"
+    }
+  },
+  {
+    "Exchange": "myokx",
+    "Type": "rest",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "myokx",
+    "Type": "ws",
+    "WebSocket URL": "wss://wseea.okx.com:8443/ws/v5"
+  },
+  {
+    "Exchange": "ndax",
+    "Type": "public",
+    "WebSocket URL": "https://api.ndax.io:8443/AP"
+  },
+  {
+    "Exchange": "ndax",
+    "Type": "private",
+    "WebSocket URL": "https://api.ndax.io:8443/AP"
+  },
+  {
+    "Exchange": "ndax",
+    "Type": "ws",
+    "WebSocket URL": "wss://api.ndax.io/WSGateway"
+  },
+  {
+    "Exchange": "okcoin",
+    "Type": "rest",
+    "WebSocket URL": "https://www.{hostname}"
+  },
+  {
+    "Exchange": "okcoin",
+    "Type": "ws",
+    "WebSocket URL": "wss://real.okcoin.com:8443/ws/v3"
+  },
+  {
+    "Exchange": "okx",
+    "Type": "rest",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "okx",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws.okx.com:8443/ws/v5"
+  },
+  {
+    "Exchange": "okxus",
+    "Type": "rest",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "okxus",
+    "Type": "ws",
+    "WebSocket URL": "wss://wsus.okx.com:8443/ws/v5"
+  },
+  {
+    "Exchange": "onetrading",
+    "Type": "public",
+    "WebSocket URL": "https://api.onetrading.com/fast"
+  },
+  {
+    "Exchange": "onetrading",
+    "Type": "private",
+    "WebSocket URL": "https://api.onetrading.com/fast"
+  },
+  {
+    "Exchange": "onetrading",
+    "Type": "ws",
+    "WebSocket URL": "wss://streams.onetrading.com/"
+  },
+  {
+    "Exchange": "oxfun",
+    "Type": "public",
+    "WebSocket URL": "https://api.ox.fun"
+  },
+  {
+    "Exchange": "oxfun",
+    "Type": "private",
+    "WebSocket URL": "https://api.ox.fun"
+  },
+  {
+    "Exchange": "oxfun",
+    "Type": "ws",
+    "WebSocket URL": "wss://api.ox.fun/v2/websocket"
+  },
+  {
+    "Exchange": "oxfun",
+    "Type": "test",
+    "WebSocket URL": "wss://stgapi.ox.fun/v2/websocket"
+  },
+  {
+    "Exchange": "p2b",
+    "Type": "public",
+    "WebSocket URL": "https://api.p2pb2b.com/api/v2/public"
+  },
+  {
+    "Exchange": "p2b",
+    "Type": "private",
+    "WebSocket URL": "https://api.p2pb2b.com/api/v2"
+  },
+  {
+    "Exchange": "p2b",
+    "Type": "ws",
+    "WebSocket URL": "wss://apiws.p2pb2b.com/"
+  },
+  {
+    "Exchange": "paradex",
+    "Type": "v1",
+    "WebSocket URL": "https://api.prod.{hostname}/v1"
+  },
+  {
+    "Exchange": "paradex",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws.api.prod.paradex.trade/v1"
+  },
+  {
+    "Exchange": "phemex",
+    "Type": "v1",
+    "WebSocket URL": "https://{hostname}/v1"
+  },
+  {
+    "Exchange": "phemex",
+    "Type": "v2",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "phemex",
+    "Type": "public",
+    "WebSocket URL": "https://{hostname}/exchange/public"
+  },
+  {
+    "Exchange": "phemex",
+    "Type": "private",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "phemex",
+    "Type": "ws",
+    "WebSocket URL": "wss://ws.phemex.com"
+  },
+  {
+    "Exchange": "poloniex",
+    "Type": "spot",
+    "WebSocket URL": "https://api.poloniex.com"
+  },
+  {
+    "Exchange": "poloniex",
+    "Type": "swap",
+    "WebSocket URL": "https://api.poloniex.com"
+  },
+  {
+    "Exchange": "poloniex",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://ws.poloniex.com/ws/public",
+      "private": "wss://ws.poloniex.com/ws/private"
+    }
+  },
+  {
+    "Exchange": "probit",
+    "Type": "accounts",
+    "WebSocket URL": "https://accounts.probit.com"
+  },
+  {
+    "Exchange": "probit",
+    "Type": "public",
+    "WebSocket URL": "https://api.probit.com/api/exchange"
+  },
+  {
+    "Exchange": "probit",
+    "Type": "private",
+    "WebSocket URL": "https://api.probit.com/api/exchange"
+  },
+  {
+    "Exchange": "probit",
+    "Type": "ws",
+    "WebSocket URL": "wss://api.probit.com/api/exchange/v1/ws"
+  },
+  {
+    "Exchange": "tradeogre",
+    "Type": "rest",
+    "WebSocket URL": "https://tradeogre.com/api/v1"
+  },
+  {
+    "Exchange": "tradeogre",
+    "Type": "ws",
+    "WebSocket URL": "wss://tradeogre.com:8443"
+  },
+  {
+    "Exchange": "upbit",
+    "Type": "public",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "upbit",
+    "Type": "private",
+    "WebSocket URL": "https://{hostname}"
+  },
+  {
+    "Exchange": "upbit",
+    "Type": "ws",
+    "WebSocket URL": "wss://{hostname}/websocket/v1"
+  },
+  {
+    "Exchange": "vertex",
+    "Type": "v1",
+    "WebSocket URL": {
+      "archive": "https://archive.prod.{hostname}/v1",
+      "gateway": "https://gateway.prod.{hostname}/v1",
+      "trigger": "https://trigger.prod.{hostname}/v1"
+    }
+  },
+  {
+    "Exchange": "vertex",
+    "Type": "v2",
+    "WebSocket URL": {
+      "archive": "https://archive.prod.{hostname}/v2",
+      "gateway": "https://gateway.prod.{hostname}/v2"
+    }
+  },
+  {
+    "Exchange": "vertex",
+    "Type": "ws",
+    "WebSocket URL": "wss://gateway.prod.vertexprotocol.com/v1/subscribe"
+  },
+  {
+    "Exchange": "whitebit",
+    "Type": "v1",
+    "WebSocket URL": {
+      "public": "https://whitebit.com/api/v1/public",
+      "private": "https://whitebit.com/api/v1"
+    }
+  },
+  {
+    "Exchange": "whitebit",
+    "Type": "v2",
+    "WebSocket URL": {
+      "public": "https://whitebit.com/api/v2/public"
+    }
+  },
+  {
+    "Exchange": "whitebit",
+    "Type": "v4",
+    "WebSocket URL": {
+      "public": "https://whitebit.com/api/v4/public",
+      "private": "https://whitebit.com/api/v4"
+    }
+  },
+  {
+    "Exchange": "whitebit",
+    "Type": "ws",
+    "WebSocket URL": "wss://api.whitebit.com/ws"
+  },
+  {
+    "Exchange": "woo",
+    "Type": "pub",
+    "WebSocket URL": "https://api-pub.woox.io"
+  },
+  {
+    "Exchange": "woo",
+    "Type": "public",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "woo",
+    "Type": "private",
+    "WebSocket URL": "https://api.{hostname}"
+  },
+  {
+    "Exchange": "woo",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://wss.woox.io/ws/stream",
+      "private": "wss://wss.woox.io/v2/ws/private/stream"
+    }
+  },
+  {
+    "Exchange": "woofipro",
+    "Type": "public",
+    "WebSocket URL": "https://api-evm.orderly.org"
+  },
+  {
+    "Exchange": "woofipro",
+    "Type": "private",
+    "WebSocket URL": "https://api-evm.orderly.org"
+  },
+  {
+    "Exchange": "woofipro",
+    "Type": "ws",
+    "WebSocket URL": {
+      "public": "wss://ws-evm.orderly.org/ws/stream",
+      "private": "wss://ws-private-evm.orderly.org/v2/ws/private/stream"
+    }
+  },
+  {
+    "Exchange": "xt",
+    "Type": "spot",
+    "WebSocket URL": "https://sapi.xt.com"
+  },
+  {
+    "Exchange": "xt",
+    "Type": "linear",
+    "WebSocket URL": "https://fapi.xt.com"
+  },
+  {
+    "Exchange": "xt",
+    "Type": "inverse",
+    "WebSocket URL": "https://dapi.xt.com"
+  },
+  {
+    "Exchange": "xt",
+    "Type": "user",
+    "WebSocket URL": "https://api.xt.com"
+  },
+  {
+    "Exchange": "xt",
+    "Type": "ws",
+    "WebSocket URL": {
+      "spot": "wss://stream.xt.com",
+      "contract": "wss://fstream.xt.com/ws"
+    }
+  }
+]
