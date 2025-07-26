@@ -1,9 +1,12 @@
 import ccxt.pro as ccxtpro
 import asyncio
 
-count_orderbook = 0
+count_orderbooks = 0
 count_tickers = 0
 total_exchanges = 0
+
+count_orderbook = 0
+count_ticker = 0
 
 async def check_exchange(exchange_id):
     global count_orderbook, count_tickers, total_exchanges
@@ -15,17 +18,25 @@ async def check_exchange(exchange_id):
         # has_orderbook = hasattr(exchange, 'watchOrderBookForSymbols')
         # has_tickers = hasattr(exchange, 'watchTickers')
 
-        has_orderbook = True if exchange.has['watchOrderBookForSymbols'] else False
+        has_orderbooks = True if exchange.has['watchOrderBookForSymbols'] else False
         has_tickers = True if exchange.has['watchTickers'] else False
 
-        if has_orderbook:
-            count_orderbook += 1
+        has_orderbook = True if exchange.has['watchOrderBookForSymbol'] else False
+        has_ticker = True if exchange.has['watchTicker'] else False
+
+        if has_orderbooks:
+            count_orderbooks += 1
+        if has_tickers:
+            count_tickers += 1
+
+        if has_orderbooks:
+            count_orderbooks += 1
         if has_tickers:
             count_tickers += 1
 
         total_exchanges += 1
 
-        print(f'{exchange_id:<22} | OrderBookForSymbols: {"✅" if has_orderbook else "❌"} | '
+        print(f'{exchange_id:<22} | OrderBookForSymbols: {"✅" if has_orderbooks else "❌"} | '
               f'watchTickers: {"✅" if has_tickers else "❌"}')
 
         await exchange.close()
