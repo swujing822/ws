@@ -6,7 +6,7 @@ import time
 from datetime import datetime, timezone
 import shutil
 
-csv_dir = "csv"
+csv_dir = "csv_orderbooks"
 
 if os.path.exists(csv_dir) and os.path.isdir(csv_dir):
     shutil.rmtree(csv_dir)

@@ -4,9 +4,18 @@ import csv
 import os
 import time
 from datetime import datetime, timezone
+import shutil
 
-# 自动创建 csv 目录
-os.makedirs("csv", exist_ok=True)
+
+csv_dir = "csv_tickers"
+
+if os.path.exists(csv_dir) and os.path.isdir(csv_dir):
+    shutil.rmtree(csv_dir)
+    print(f"Deleted directory: {csv_dir}")
+else:
+    print(f"Directory does not exist: {csv_dir}")
+
+os.makedirs(csv_dir, exist_ok=True)
 
 # 时间格式化函数：13位时间戳 → 时:分:秒.ms
 def format_time_from_timestamp(ts):
