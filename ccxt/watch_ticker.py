@@ -66,7 +66,7 @@ async def watch_ticker(exchange_id, symbol):
     try:
         if hasattr(exchange, 'watchTicker'):
             while True:
-                ticker = await exchange.watchTicker(symbol)
+                ticker = await exchange.watch_order_book(symbol)
                 print(
                     f"[{exchange_id}]",
                     exchange.iso8601(exchange.milliseconds()),
