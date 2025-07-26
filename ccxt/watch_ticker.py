@@ -86,27 +86,11 @@ async def watch_ticker(exchange_id, symbol):
 
 # 主函数
 async def main():
-    symbols = [
-        "ALGO/USDT:USDT",
-        "ADA/USDT:USDT",
-        "AAVE/USDT:USDT",
-        "ACH/USDT:USDT",
-    ]
-
     symbol = "ACH/USDT:USDT"
     exchange_id = "gateio"
-    # exchange_ids = ['okx', 'binance', 'bybit', 'bitget', 'gateio']
-    exchange_ids = [
-        'binanceusdm', 'blofin', 'kucoinfutures', 'bingx', 'mexc',
-        'binance', 'phemex', 'bybit', 'bitrue', 'bitmart',
-        'xt', 'bitget', 'gateio', 'gate'
-    ]
-
     tasks = [
         asyncio.create_task(watch_ticker(exchange_id, symbol))
-        for exchange_id in exchange_ids
     ]
-
     try:
         await asyncio.gather(*tasks)
     except KeyboardInterrupt:
