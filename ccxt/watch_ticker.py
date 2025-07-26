@@ -64,16 +64,25 @@ async def watch_ticker(exchange_id, symbol):
     await exchange.load_markets()  
 
     try:
-        if hasattr(exchange, 'watchTicker'):
+        if exchange.has['watchTicker']:
             while True:
-                ticker = await exchange.watch_ticker(symbol)
-                print(
-                    f"[{exchange_id}]",
-                    exchange.iso8601(exchange.milliseconds()),
-                    f"bid: {ticker.get('bid')}",
-                    f"ask: {ticker.get('ask')}"
-                )
-                    # save_ticker_to_csv(exchange_id, symbol, ticker)
+                try:
+                    ticker = await exchange.watch_ticker(symbol)
+                    print(exchange.iso8601(exchange.milliseconds()), ticker)
+                except Exception as e:
+                    print(e)
+                    # stop the loop on exception or leave it commented to retry
+                    # raise e
+        # if hasattr(exchange, 'watchTicker'):
+        #     while True:
+        #         ticker = await exchange.watch_ticker(symbol)
+        #         print(
+        #             f"[{exchange_id}]",
+        #             exchange.iso8601(exchange.milliseconds()),
+        #             f"bid: {ticker.get('bid')}",
+        #             f"ask: {ticker.get('ask')}"
+        #         )
+        #             # save_ticker_to_csv(exchange_id, symbol, ticker)
         else:
             print(f"🟡 {exchange_id} does not support watchTickers, skipping")
     except asyncio.CancelledError:
