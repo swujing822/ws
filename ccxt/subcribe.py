@@ -98,6 +98,20 @@ async def main():
 
     exchange_ids = ['okx', 'binance', 'bybit', 'bitget', 'gateio']
 
+    contract_symbols = [
+        # "1INCH/USDT:USDT", "A/USDT:USDT", "AAVE/USDT:USDT", "ACE/USDT:USDT",
+        # "ACH/USDT:USDT", "ACT/USDT:USDT", "ADA/USDT:USDT", "AERGO/USDT:USDT",
+        # "AERO/USDT:USDT", "AEVO/USDT:USDT", "AGLD/USDT:USDT", "AGT/USDT:USDT",
+        # "AI16Z/USDT:USDT", "AIN/USDT:USDT", "AIXBT/USDT:USDT", "ALCH/USDT:USDT",
+        "ALGO/USDT:USDT", "ANIME/USDT:USDT"
+    ]
+
+    exchange_ids = [
+        # 'binanceusdm', 'blofin', 'kucoinfutures', 'bingx', 'mexc',
+        # 'binance', 'phemex', 'bybit', 'bitrue', 'bitmart',
+        'xt', 'bitget', 'gateio', 'gate'
+    ]
+
     tasks = [
         asyncio.create_task(watch_orderbooks(exchange_id, symbols))
         for exchange_id in exchange_ids
