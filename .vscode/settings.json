@@ -15,7 +15,7 @@
   "workbench.tree.renderIndentGuides": "always",
 
   // 终端字体更清晰
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 15,
 
   // "editor.guides.indentation": false,
   "editor.renderWhitespace": "none",
