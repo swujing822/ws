@@ -7,7 +7,6 @@
   "editor.lineHeight": 26,
   "editor.tabSize": 4,
 
-  // 自动保存
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 1000,
 
@@ -15,23 +14,21 @@
   "workbench.tree.indent": 36,
   "workbench.tree.renderIndentGuides": "always",
 
-  // UI 缩放（适配高分屏）
-  "window.zoomLevel": 1.2,
-
   // 终端字体更清晰
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 16,
 
   // "editor.guides.indentation": false,
   "editor.renderWhitespace": "none",
-  // 美化光标行为
   "editor.cursorBlinking": "smooth",
 
-  "python.defaultInterpreterPath": ".venv/bin/python"
+
 
 
   // "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python",
-  // "python.analysis.extraPaths": [
-  //   "/usr/local/python/3.12.1/lib/python3.12/site-packages"
-  // ],
-  // "python.languageServer": "Pylance",
+  "python.analysis.extraPaths": [
+    "/usr/local/python/3.12.1/lib/python3.12/site-packages"
+  ],
+  
+    "python.languageServer": "Pylance",
+  "python.defaultInterpreterPath": ".venv/bin/python"
 }

@@ -4,5 +4,6 @@
     "ms-python.python",         // Python 支持
     "ms-toolsai.jupyter",       // Jupyter 支持
     "ms-toolsai.vscode-jupyter",// Jupyter Notebook 支持
-  ]
+  ],
+
 }

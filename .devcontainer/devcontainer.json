@@ -1,3 +1,19 @@
 {
-  "postCreateCommand": "python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt"
+  "name": "My Project DevContainer",
+  "postCreateCommand": "python -m venv .venv && echo 'source .venv/bin/activate' >> ~/.bashrc && pip install -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": ".venv/bin/python",
+        "python.languageServer": "Pylance"
+        // "python.analysis.extraPaths": [
+        //   "/usr/local/python/3.12.1/lib/python3.12/site-packages"
+        // ]
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  }
 }
