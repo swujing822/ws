@@ -4,9 +4,18 @@ import csv
 import os
 import time
 from datetime import datetime, timezone
+import shutil
 
-# 自动创建 csv 目录
-os.makedirs("csv", exist_ok=True)
+csv_dir = "csv"
+
+if os.path.exists(csv_dir) and os.path.isdir(csv_dir):
+    shutil.rmtree(csv_dir)
+    print(f"Deleted directory: {csv_dir}")
+else:
+    print(f"Directory does not exist: {csv_dir}")
+
+
+os.makedirs(csv_dir, exist_ok=True)
 
 # 时间格式化函数：13位时间戳 → 时:分:秒.ms
 def format_time_from_timestamp(ts):
@@ -52,18 +61,13 @@ async def watch_orderbooks(exchange_id, symbols):
     exchange = exchange_class({'enableRateLimit': True})
 
     try:
-        if hasattr(exchange, 'watchTickers'):
+        if hasattr(exchange, 'watchOrderBookForSymbols'):
             while True:
-                tickers = await exchange.watchTickers(symbols)
-                for symbol, ticker in tickers.items():
-                    # print(
-                    #     f"[{exchange_id}]",
-                    #     exchange.iso8601(exchange.milliseconds()),
-                    #     symbol,
-                    #     f"bid: {ticker.get('bid')}",
-                    #     f"ask: {ticker.get('ask')}"
-                    # )
-                    save_ticker_to_csv(exchange_id, symbol, ticker)
+                ob = await exchange.watchOrderBookForSymbols(symbols)
+
+                print(ob)
+                # for symbol, ticker in tickers.items():
+                #     save_ticker_to_csv(exchange_id, symbol, ticker)
         else:
             print(f"🟡 {exchange_id} does not support watchTickers, skipping")
     except asyncio.CancelledError:
