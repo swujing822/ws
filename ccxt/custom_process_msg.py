@@ -9,7 +9,7 @@ class MyCoinbase(ccxtpro.gateio):
         super().handle_message(client, message)  # 调用原始解析逻辑
 
 async def example():
-    exchange = MyCoinbase({'enableRateLimit': True, 'verbose': True})
+    exchange = MyCoinbase({'enableRateLimit': True, 'verbose': False})
     await exchange.watch_ticker('ACH/USDT:USDT')
     await exchange.close()
 
