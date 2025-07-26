@@ -103,7 +103,7 @@ async def main():
     ]
 
     tasks = [
-        asyncio.create_task(watch_tickers(exchange_id, symbols))
+        asyncio.create_task(watch_ticker(exchange_id, symbol))
         for exchange_id in exchange_ids
     ]
 
