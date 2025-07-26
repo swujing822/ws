@@ -89,14 +89,14 @@ async def watch_orderbooks(exchange_id, symbols):
 
 # 主函数
 async def main():
-    symbols = [
-        "ALGO/USDT:USDT",
-        "ADA/USDT:USDT",
-        "AAVE/USDT:USDT",
-        "ACH/USDT:USDT",
-    ]
+    # symbols = [
+    #     "ALGO/USDT:USDT",
+    #     "ADA/USDT:USDT",
+    #     "AAVE/USDT:USDT",
+    #     "ACH/USDT:USDT",
+    # ]
 
-    exchange_ids = ['okx', 'binance', 'bybit', 'bitget', 'gateio']
+    # exchange_ids = ['okx', 'binance', 'bybit', 'bitget', 'gateio']
 
     contract_symbols = [
         # "1INCH/USDT:USDT", "A/USDT:USDT", "AAVE/USDT:USDT", "ACE/USDT:USDT",
