@@ -1,214 +1,79 @@
-{
-  "exchanges": [
-    {
-      "exchange": "binanceusdm",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "kucoinfutures",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "cryptocom",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "blofin",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "tradeogre",
-      "watchOrderBookForSymbols": false,
-      "watchTickers": false,
-      "watchOrderBook": true,
-      "watchTicker": false
-    },
-    {
-      "exchange": "krakenfutures",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "defx",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "bingx",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "binanceus",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "coinbaseexchange",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "binance",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "kraken",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "bitmex",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "deribit",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "phemex",
-      "watchOrderBookForSymbols": false,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "coinbaseinternational",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "okx",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "okxus",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "myokx",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "bybit",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "coincatch",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "coinex",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "kucoin",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "oxfun",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "bitmart",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "bitget",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "coinbase",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "coinbaseadvanced",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": true,
-      "watchOrderBook": true,
-      "watchTicker": true
-    },
-    {
-      "exchange": "gemini",
-      "watchOrderBookForSymbols": true,
-      "watchTickers": false,
-      "watchOrderBook": true,
-      "watchTicker": false
-    }
-  ],
-  "summary": {
-    "total_exchanges": 71,
-    "count_orderbooks": 27,
-    "count_tickers": 27,
-    "count_orderbook": 29,
-    "count_ticker": 27
-  }
+import ccxt.pro as ccxtpro
+import asyncio
+import json
+
+# 定义统计变量和结果列表
+results = []
+summary = {
+    'total_exchanges': 0,
+    'count_orderbooks': 0,
+    'count_tickers': 0,
+    'count_orderbook': 0,
+    'count_ticker': 0,
+    'errors': []
 }
+
+async def check_exchange(exchange_id):
+    try:
+        cls = getattr(ccxtpro, exchange_id)
+        exchange = cls({'enableRateLimit': True})
+        await exchange.load_markets()
+
+        has_orderbooks = exchange.has.get('watchOrderBookForSymbols', False)
+        has_tickers = exchange.has.get('watchTickers', False)
+        has_orderbook = exchange.has.get('watchOrderBook', False)
+        has_ticker = exchange.has.get('watchTicker', False)
+
+        # 统计转换为 bool 再计数，避免 NoneType 错误
+        summary['total_exchanges'] += 1
+        summary['count_orderbooks'] += int(bool(has_orderbooks))
+        summary['count_tickers'] += int(bool(has_tickers))
+        summary['count_orderbook'] += int(bool(has_orderbook))
+        summary['count_ticker'] += int(bool(has_ticker))
+
+        # 保存每个交易所支持的功能
+        results.append({
+            'exchange': exchange_id,
+            'watchOrderBookForSymbols': bool(has_orderbooks),
+            'watchTickers': bool(has_tickers),
+            'watchOrderBook': bool(has_orderbook),
+            'watchTicker': bool(has_ticker)
+        })
+
+        print(f'{exchange_id:<22} | OrderBookForSymbols: {"✅" if has_orderbooks else "❌"} | '
+              f'watchTickers: {"✅" if has_tickers else "❌"} | '
+              f'watchOrderBook: {"✅" if has_orderbook else "❌"} | '
+              f'watchTicker: {"✅" if has_ticker else "❌"}')
+
+        await exchange.close()
+
+    except Exception as e:
+        print(f'{exchange_id:<22} | ❌ ERROR: {str(e)}')
+        summary['errors'].append({'exchange': exchange_id, 'error': str(e)})
+    finally:
+        try:
+            await exchange.close()
+        except:
+            pass  # 忽略关闭异常
+
+async def main():
+    await asyncio.gather(*[check_exchange(id) for id in ccxtpro.exchanges])
+
+    print("\n--- ✅ 支持统计结果 ---")
+    for key, value in summary.items():
+        if key != 'errors':
+            print(f'{key}: {value}')
+    print(f'出现错误的交易所数量: {len(summary["errors"])}')
+
+    # 保存到 JSON 文件
+    output = {
+        'timestamp': asyncio.get_event_loop().time(),  # 添加时间戳
+        'exchanges': results,
+        'summary': summary
+    }
+
+    with open('exchange_features.json', 'w', encoding='utf-8') as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+
+# 运行主任务
+asyncio.run(main())
