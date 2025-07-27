@@ -25,6 +25,7 @@ async def check_exchange(exchange_id):
         result[exchange_id] = {
             'has_orderbooks': has_orderbooks,
             
+            
         }
 
         if has_orderbooks:
