@@ -8,6 +8,8 @@ total_exchanges = 0
 count_orderbook = 0
 count_ticker = 0
 
+result = {}
+
 async def check_exchange(exchange_id):
     global count_orderbooks, count_tickers, count_orderbook, count_ticker, total_exchanges
     try:
