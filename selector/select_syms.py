@@ -73,7 +73,7 @@ print(f"✅ 已保存 {len(exchange_symbols_gt50)} 个交易所到 {basedir}/fil
 
 ######################################## ✅ 选取前 100 个交易所支持的 symbol
 # ✅ 选取 filtered_symbol_data 中前 100 个 symbol，构建 {exchange: [symbols]} 格式
-top_100_symbols = filtered_symbol_data[:20]
+top_100_symbols = filtered_symbol_data[:10]
 top_100_exchange_symbols = {}
 
 def normalize_symbol(symbol: str) -> str:
@@ -88,7 +88,8 @@ def normalize_symbol(symbol: str) -> str:
 
 for entry in top_100_symbols:
     raw_symbol = entry["symbol"]
-    symbol = normalize_symbol(raw_symbol)  # ✅ 格式标准化
+    # symbol = normalize_symbol(raw_symbol)  # ✅ 格式标准化
+    symbol = raw_symbol
     for ex in entry["exchanges"]:
         top_100_exchange_symbols.setdefault(ex, []).append(symbol)
 
