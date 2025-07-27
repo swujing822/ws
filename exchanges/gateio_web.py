@@ -12,6 +12,9 @@ WS_URL = "wss://fx-webws.gateio.live/v4/ws/usdt"
 # CONTRACTS = ["ALGO_USDT", "XRP_USDT", "LTC_USDT"]
 CONTRACTS = ["DOGE_USDT"]
 
+
+# AEVO/USDT:USDT
+
 # {"channel":"futures.mini_ob","event":"subscribe","payload":["DOGE_USDT","5","0.00001","200ms"],"time":1753538221}
 def on_open(ws):
     print("✅ 已连接 Gate.io 合约 WebSocket")
@@ -23,7 +26,7 @@ def on_open(ws):
             # "channel": "futures.tickers",  # ✅ 买一卖一频道
 
             "event": "subscribe",
-            "payload":["DOGE_USDT","1","0.00001","100ms"]
+            "payload":[contract,"1","0.00001","100ms"]
             # "payload": [contract]
         }
         ws.send(json.dumps(sub_msg))
@@ -40,9 +43,9 @@ def on_message(ws, message):
         # 💰 提取 Bid1 和 Ask1 的价格
         bid1 = float(data['result']['bids'][0]['p'])
         ask1 = float(data['result']['asks'][0]['p'])
-
+        symbol = data['result']['contract']
         # 📤 输出结果
-        print(f"{formatted_time}  Bid1: {bid1:.5f}  Ask1: {ask1:.5f}")
+        print(f"{formatted_time} {symbol}  Bid1: {bid1:.8f}  Ask1: {ask1:.8f}")
 
         # ✅ 示例字段说明（book_ticker 推送结构）：
         # 'result': {
