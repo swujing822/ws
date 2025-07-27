@@ -5,74 +5,53 @@ import os
 import time
 from datetime import datetime, timezone
 import shutil
+from utils.save_csv import *
 
 csv_dir = "csv_orderbooks_two"
 
-if os.path.exists(csv_dir) and os.path.isdir(csv_dir):
-    shutil.rmtree(csv_dir)
-    print(f"Deleted directory: {csv_dir}")
-else:
-    print(f"Directory does not exist: {csv_dir}")
+clean_dir(csv_dir)
 
-os.makedirs(csv_dir, exist_ok=True)
+csv_symbol_dir = "csv_orderbooks_symbol"
 
-# 时间格式化函数：13位时间戳 → 时:分:秒.ms
-def format_time_from_timestamp(ts):
-    dt = datetime.fromtimestamp(ts / 1000, tz=timezone.utc)
-    return dt.strftime('%H:%M:%S.') + f'{int(dt.microsecond / 1000):03d}'
+clean_dir(csv_symbol_dir)
 
-def save_orderbook_top2_to_csv(ob, csv_file):
-    if ob.get('timestamp') is None:
-        timestamp_ms = int(time.time() * 1000)
-    else:
-        timestamp_ms = ob['timestamp']
-
-    bids = ob.get('bids', [])
-    asks = ob.get('asks', [])
-    formatted_time = format_time_from_timestamp(timestamp_ms)
-
-    row = [
-        timestamp_ms,
-        formatted_time,
-        ob.get('symbol'),
-        bids[0][0] if len(bids) > 0 else None,
-        bids[0][1] if len(bids) > 0 else None,
-        bids[1][0] if len(bids) > 1 else None,
-        bids[1][1] if len(bids) > 1 else None,
-        asks[0][0] if len(asks) > 0 else None,
-        asks[0][1] if len(asks) > 0 else None,
-        asks[1][0] if len(asks) > 1 else None,
-        asks[1][1] if len(asks) > 1 else None,
-    ]
-
-    write_header = not os.path.exists(csv_file)
-    with open(csv_file, mode='a', newline='') as f:
-        writer = csv.writer(f)
-        if write_header:
-            writer.writerow([
-                'timestamp', 'time', 'symbol',
-                'bid1_price', 'bid1_volume',
-                'bid2_price', 'bid2_volume',
-                'ask1_price', 'ask1_volume',
-                'ask2_price', 'ask2_volume'
-            ])
-        writer.writerow(row)
-
-async def watch_one_symbol(exchange, exchange_id, symbol):
-    while True:
+async def watch_one_symbol(exchange, exchange_id, symbol, max_retries=3):
+    retry_count = 0
+    while retry_count < max_retries:
         try:
             ob = await exchange.watch_order_book(symbol)
+            retry_count = 0  # 成功订阅后重置重试计数器
+
             symbol_clean = symbol.replace("/", "_").replace(":", "_")
             csv_file = f'{csv_dir}/inner_orderbook_{exchange_id}_{symbol_clean}.csv'
-            timestamp_ms = ob['timestamp']
-            print(f"{ob['nonce']} {ob['timestamp']} {format_time_from_timestamp(timestamp_ms)} [{exchange_id}] {symbol} {ob['asks'][0]}")
-            # print(ob['symbol'])
+            # timestamp_ms = ob['timestamp']
 
-            save_orderbook_top2_to_csv(ob, csv_file)
+            save_orderbook_top2_to_csv(exchange_id, ob, csv_file)
+
+            csv_symbol_file = f'{csv_symbol_dir}/ob_{symbol_clean}.csv'
+            save_orderbook_top2_to_csv(exchange_id, ob, csv_symbol_file)
         except Exception as e:
-            print(f"🔴 Failed to subscribe {symbol} on {exchange_id}: {e}")
+            retry_count += 1
+            print(f"🔴 Failed to subscribe {symbol} on {exchange_id}: {e} [retry {retry_count}/{max_retries}]")
             await asyncio.sleep(1)
-            continue
+
+    print(f"❌ Exiting {exchange_id} - {symbol} subscription after {max_retries} failed attempts.")
+
+# async def watch_one_symbol(exchange, exchange_id, symbol):
+#     while True:
+#         try:
+#             ob = await exchange.watch_order_book(symbol)
+#             symbol_clean = symbol.replace("/", "_").replace(":", "_")
+#             csv_file = f'{csv_dir}/inner_orderbook_{exchange_id}_{symbol_clean}.csv'
+#             timestamp_ms = ob['timestamp']
+#             # print(f"{ob['nonce']} {ob['timestamp']} {format_time_from_timestamp(timestamp_ms)} [{exchange_id}] {symbol} {ob['asks'][0]}")
+#             # print(ob['symbol'])
+
+#             save_orderbook_top2_to_csv(ob, csv_file)
+#         except Exception as e:
+#             print(f"🔴 Failed to subscribe {symbol} on {exchange_id}: {e}")
+#             await asyncio.sleep(1)
+#             continue
 
 # 单个交易所聚合 ticker 订阅协程
 async def watch_orderbooks(exchange_id, symbols):
@@ -88,26 +67,30 @@ async def watch_orderbooks(exchange_id, symbols):
                 csv_file = f'{csv_dir}/orderbook_{exchange_id}_{symbol}.csv'
 
                 # print(ob['asks'][0], ob['symbol'])
-                save_orderbook_top2_to_csv(ob, csv_file)
+                # save_orderbook_top2_to_csv(ob, csv_file)
+                save_orderbook_top2_to_csv(exchange_id, ob, csv_file)
+
+                csv_symbol_file = f'{csv_symbol_dir}/ob_{symbol}.csv'
+                save_orderbook_top2_to_csv(exchange_id, ob, csv_symbol_file)
                 # for symbol, ticker in tickers.items():
                 #     save_ticker_to_csv(exchange_id, symbol, ticker)
         else:
-            print(f"🟡 {exchange_id} does not support watchTickers, skipping")
-            inner_tasks = []
+            print(f"🟡 {exchange_id} does not support watchOrderBookForSymbols, skipping")
+            # inner_tasks = []
 
-            for symbol in symbols:
-                # tasks.append(asyncio.create_task(watch_orderbook(exchange_id, symbol)))
-                print("inner start ", symbol)
-                task = asyncio.create_task(watch_one_symbol(exchange, exchange_id, symbol))
-                inner_tasks.append(task)
-                await asyncio.sleep(1)  # 👈 延迟启动，避免被限速封 IP 等问题
-            try:
-                await asyncio.gather(*inner_tasks)
-            except KeyboardInterrupt:
-                print("\n🔴 Ctrl+C received. Cancelling tasks...")
-                for task in inner_tasks:
-                    task.cancel()
-                await asyncio.gather(*inner_tasks, return_exceptions=True)
+            # for symbol in symbols:
+            #     # tasks.append(asyncio.create_task(watch_orderbook(exchange_id, symbol)))
+            #     print("inner start ", symbol)
+            #     task = asyncio.create_task(watch_one_symbol(exchange, exchange_id, symbol))
+            #     inner_tasks.append(task)
+            #     await asyncio.sleep(1)  # 👈 延迟启动，避免被限速封 IP 等问题
+            # try:
+            #     await asyncio.gather(*inner_tasks)
+            # except KeyboardInterrupt:
+            #     print("\n🔴 Ctrl+C received. Cancelling tasks...")
+            #     for task in inner_tasks:
+            #         task.cancel()
+            #     await asyncio.gather(*inner_tasks, return_exceptions=True)
     except asyncio.CancelledError:
         print(f"🟡 Cancelled: {exchange_id}")
     except Exception as e:
@@ -122,37 +105,92 @@ async def main():
     with open("../selector/top100_exchange_symbols.json", "r", encoding="utf-8") as f:
         ex_syms = json.load(f)
 
+    with open("./exchange_profile.json", "r", encoding="utf-8") as f:
+        exchange_profile = json.load(f)
+
+    # print(exchange_profile)
+
+    # for exchange_id in exchange_profile:
+    #     has_orderbooks = exchange_profile[exchange_id]['has_orderbooks']
+    #     has_tickers = exchange_profile[exchange_id]['has_tickers']
+    #     has_orderbook = exchange_profile[exchange_id]['has_orderbook']
+    #     has_ticker = exchange_profile[exchange_id]['has_ticker']
+
+    #     print(f'{exchange_id:<22} | OrderBookForSymbols: {"✅" if has_orderbooks else "❌"} | '
+    #           f'watchTickers: {"✅" if has_tickers else "❌"} | '
+    #           f'has_orderbook: {"✅" if has_orderbook else "❌"} | '
+    #           f'has_ticker: {"✅" if has_ticker else "❌"}')
+
     # print(ex_syms)
     #     "AAVE/USDT:USDT",
     # "ACT/USDT:USDT",
     # "ADA/USDT:USDT",
 
-    tasks = [
-    ]
+    tasks = []
+    inner_tasks = []
 
-    skips = ["digifinex", "bitmart"]
 
+    skips = ["digifinex", "bitmart", 'lbank', 'bitrue']
+
+    # selected = ["ascendex", 'bybit']
     selected = ["ascendex"]
+
+
+    exchanges = []
 
     for exchange_id in ex_syms:
         if exchange_id in skips:
             print("skip ", exchange_id)
             continue
-        if exchange_id not in selected:
-            print("skip ", exchange_id)
-            continue
-        print(f"start {exchange_id}")
-        task = asyncio.create_task(watch_orderbooks(exchange_id, ex_syms[exchange_id]))
-        tasks.append(task)
-        await asyncio.sleep(1)  # 👈 延迟启动，避免被限速封 IP 等问题
+        # if exchange_id not in selected:
+        #     print("skip ", exchange_id)
+        #     continue
+                
+        symbols = ex_syms[exchange_id]
+        if not exchange_profile[exchange_id]['has_orderbooks']:
+        # if len(symbols) > 0:
+            try:
+                exchange_class = getattr(ccxtpro, exchange_id)
+                exchange = exchange_class({'enableRateLimit': False})
+                await exchange.load_markets()  # 必须加载市场
+                exchanges.append(exchange)
+                for symbol in symbols:
+                    print("inner start ", exchange_id, symbol, '...')
+
+                    task = asyncio.create_task(watch_one_symbol(exchange, exchange_id, symbol))
+                    tasks.append(task)
+                    # await asyncio.sleep(2)
+            except asyncio.CancelledError:
+                print(f"🟡 Cancelled: {exchange_id}")
+            except Exception as e:
+                print(f"🔴 Error in {exchange_id}: {e}")
+            # finally:
+            #     await exchange.close()
+            #     print(f"✅ Closed {exchange_id}")
+        else:
+            print(f"start {exchange_id} >>>>>>>>>>>>>>>")
+            task = asyncio.create_task(watch_orderbooks(exchange_id, symbols))
+            tasks.append(task)
+            await asyncio.sleep(1)  # 👈 延迟启动，避免被限速封 IP 等问题
     try:
-        await asyncio.gather(*tasks)
+        # await asyncio.gather(*tasks)
+        await asyncio.gather(*tasks, return_exceptions=True)
+
     except KeyboardInterrupt:
         print("\n🔴 Ctrl+C received. Cancelling tasks...")
+        # for ex in exchanges:
+        #     print("111111111 close ", ex)
+
+        #     ex.close()
         for task in tasks:
             task.cancel()
         await asyncio.gather(*tasks, return_exceptions=True)
         print("✅ All connections closed.")
+    finally:
+        for ex in exchanges:
+            print("222222222 close ", ex)
+            await ex.close()
+            print(f"✅ Closed {ex}")
 
 if __name__ == '__main__':
     asyncio.run(main())

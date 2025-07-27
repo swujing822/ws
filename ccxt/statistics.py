@@ -24,8 +24,9 @@ async def check_exchange(exchange_id):
 
         result[exchange_id] = {
             'has_orderbooks': has_orderbooks,
-            
-            
+            'has_tickers': has_tickers,
+            'has_orderbook': has_orderbook,
+            'has_ticker': has_ticker,
         }
 
         if has_orderbooks:
@@ -59,6 +60,12 @@ async def main():
     print(f'支持 watchTickers 的交易所: {count_tickers}')
     print(f'支持 watchOrderBook 的交易所: {count_orderbook}')
     print(f'支持 watchTicker 的交易所: {count_ticker}')
+
+    print(result)
+    import json
+
+    with open("exchange_profile.json", "w", encoding="utf-8") as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
 
 # 运行主任务
 asyncio.run(main())

@@ -1,0 +1,428 @@
+{
+  "coincheck": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": false
+  },
+  "blofin": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "cryptocom": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "kucoinfutures": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "blockchaincom": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "okcoin": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "tradeogre": {
+    "has_orderbooks": false,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": false
+  },
+  "krakenfutures": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "p2b": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "defx": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "bithumb": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "apex": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "luno": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": false
+  },
+  "binanceus": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "bitstamp": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": false
+  },
+  "bingx": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "woofipro": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "coinbaseexchange": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "hollaex": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": false
+  },
+  "modetrade": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "mexc": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "paradex": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "binanceusdm": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "binancecoinm": {
+    "has_orderbooks": null,
+    "has_tickers": null,
+    "has_orderbook": null,
+    "has_ticker": null
+  },
+  "binance": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "vertex": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "upbit": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "bitopro": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "bitvavo": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "bitmex": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "probit": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "kraken": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "bittrade": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "coinone": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "whitebit": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "onetrading": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "bequant": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "hitbtc": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "hashkey": {
+    "has_orderbooks": null,
+    "has_tickers": null,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "deribit": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "cex": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "woo": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "phemex": {
+    "has_orderbooks": false,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "poloniex": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "exmo": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "hyperliquid": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "coinbaseinternational": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "bitfinex": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "kucoin": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "okx": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "okxus": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "myokx": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "ndax": {
+    "has_orderbooks": null,
+    "has_tickers": null,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "coincatch": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "bybit": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "derive": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "ascendex": {
+    "has_orderbooks": null,
+    "has_tickers": null,
+    "has_orderbook": true,
+    "has_ticker": false
+  },
+  "bitrue": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": false
+  },
+  "coinex": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "huobi": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "htx": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "coinbase": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "oxfun": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "bitmart": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "lbank": {
+    "has_orderbooks": null,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "bitget": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "xt": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "coinbaseadvanced": {
+    "has_orderbooks": true,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "gate": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  },
+  "gemini": {
+    "has_orderbooks": true,
+    "has_tickers": false,
+    "has_orderbook": true,
+    "has_ticker": false
+  },
+  "gateio": {
+    "has_orderbooks": null,
+    "has_tickers": true,
+    "has_orderbook": true,
+    "has_ticker": true
+  }
+}
