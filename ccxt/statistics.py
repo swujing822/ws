@@ -22,6 +22,11 @@ async def check_exchange(exchange_id):
         has_orderbook = exchange.has.get('watchOrderBook', False)
         has_ticker = exchange.has.get('watchTicker', False)
 
+        result[exchange_id] = {
+            'has_orderbooks': has_orderbooks,
+            
+        }
+
         if has_orderbooks:
             count_orderbooks += 1
         if has_tickers:
