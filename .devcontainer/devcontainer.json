@@ -5,10 +5,12 @@
     "vscode": {
       "settings": {
         "python.defaultInterpreterPath": ".venv/bin/python",
-        "python.languageServer": "Pylance"
+        "python.languageServer": "Pylance",
         // "python.analysis.extraPaths": [
         //   "/usr/local/python/3.12.1/lib/python3.12/site-packages"
         // ]
+        "editor.inlineSuggest.enabled": true,
+        "github.copilot.enable": true
       },
       "extensions": [
         "ms-python.python",
