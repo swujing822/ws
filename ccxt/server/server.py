@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import json
 
-DATA_DIR = '../csv_orderbooks_symbol'
+DATA_DIR = '../csv_orderbooks_symbol3'
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
