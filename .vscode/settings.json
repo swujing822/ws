@@ -1,6 +1,6 @@
 {
   // 设置浅色主题
-  "workbench.colorTheme": "Solarized Light",
+  // "workbench.colorTheme": "Solarized Light",
 
   // 字体配置
   "editor.fontSize": 16,
@@ -11,7 +11,7 @@
   "files.autoSaveDelay": 1000,
 
   // 资源管理器缩进
-  "workbench.tree.indent": 36,
+  "workbench.tree.indent": 30,
   "workbench.tree.renderIndentGuides": "always",
 
   // 终端字体更清晰

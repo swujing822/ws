@@ -7,11 +7,11 @@ from datetime import datetime, timezone
 import shutil
 from utils.save_csv import *
 
-csv_dir = "csv_orderbooks_two2"
+csv_dir = "csv_orderbooks_two3"
 
 clean_dir(csv_dir)
 
-csv_symbol_dir = "csv_orderbooks_symbol2"
+csv_symbol_dir = "csv_orderbooks_symbol3"
 
 clean_dir(csv_symbol_dir)
 
